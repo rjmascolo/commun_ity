@@ -1,28 +1,24 @@
 import React from 'react'
-import { Header, Table, Rating } from 'semantic-ui-react'
+import { Header, Table, Rating, Checkbox } from 'semantic-ui-react'
 
 const TaskTableRows = () => {
   return (
-    <div>
       <Table.Row>
         <Table.Cell>
-          <Header as='h2' textAlign='center'>A</Header>
-        </Table.Cell>
-        <Table.Cell singleLine>Power Output</Table.Cell>
-        <Table.Cell>
-          <Rating icon='star' defaultRating={3} maxRating={3} />
-        </Table.Cell>
-        <Table.Cell textAlign='right'>
-            80% <br />
-          <a href='#'>18 studies</a>
+          Cooking mashed potatoes and string bean cassorole
         </Table.Cell>
         <Table.Cell>
-            Creatine supplementation is the reference compound for increasing muscular creatine levels; there is
-            variability in this increase, however, with some nonresponders.
+          Ryan's Potluck
+        </Table.Cell>
+        <Table.Cell textAlign='center'>
+            Monday, December 25th
+        </Table.Cell>
+        <Table.Cell collapsing >
+          <Checkbox toggle />
         </Table.Cell>
       </Table.Row>
 
  )
 }
 
-export default TaskTableRows
+export default TaskTableRows;

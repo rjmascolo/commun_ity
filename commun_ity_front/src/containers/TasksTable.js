@@ -1,11 +1,19 @@
 import React from 'react'
-import { Header, Table, Rating } from 'semantic-ui-react'
+import { Header, Table, Icon } from 'semantic-ui-react'
 import TaskTableRows from '../container_cards/TaskTableRows'
 
 const TaskTable = () => {
 
   return (
+
     <div>
+      <div>
+        <Header as='h2' icon textAlign='center'>
+          <Header.Content>
+            Your Tasks
+          </Header.Content>
+        </Header>
+      </div>
   <Table celled padded>
     <Table.Header>
       <Table.Row>

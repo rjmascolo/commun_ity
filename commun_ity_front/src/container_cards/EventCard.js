@@ -13,9 +13,6 @@ const EventCard = () => (
           6:30 on Sunday Febuary 31st
         </span>
       </Card.Meta>
-      <Card.Description>
-        A feast dedicated to Module 2 Ryan because of his caring and genourous ways.
-      </Card.Description>
     </Card.Content>
     <Card.Content extra>
       <a>

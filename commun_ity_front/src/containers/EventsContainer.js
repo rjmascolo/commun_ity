@@ -6,14 +6,13 @@ const EventsContainer = () => (
   <div>
   <div>
     <Header as='h2' icon textAlign='center'>
-      <Icon name='users' circular />
       <Header.Content>
-        Events
+         Your Events
       </Header.Content>
     </Header>
   </div>
 
-  <Grid stackable columns={3}>
+  <Grid stackable columns={5}>
     <Grid.Column>
       <EventCard />
     </Grid.Column>

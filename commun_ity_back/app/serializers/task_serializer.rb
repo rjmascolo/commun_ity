@@ -1,7 +1,7 @@
 class TaskSerializer < ActiveModel::Serializer
 
-  attributes :id, :name, :description, :event_id, :user_id
-  
+  attributes :id, :name, :description, :event, :user_id
+
   belongs_to :event
   belongs_to :user
 end

@@ -829,3 +829,340 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 93ms (Views: 72.6ms | ActiveRecord: 20.1ms)
 
 
+  [1m[35m (7.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (13.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (234.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "commun_ity_back_development"[0m
+  [1m[35m (208.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "commun_ity_back_test"[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2744104040621181210)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20171221191351)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (17.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying, "first_name" character varying, "last_name" character varying, "profile_pic" character varying, "password_digest" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (1.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171221191351"]]
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCommunities (20171221191423)
+  [1m[35m (6.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.2ms)[0m  [1m[35mCREATE TABLE "communities" ("id" bigserial primary key, "name" character varying, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171221191423"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateEvents (20171221191551)
+  [1m[35m (6.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (18.1ms)[0m  [1m[35mCREATE TABLE "events" ("id" bigserial primary key, "name" character varying, "date" date, "image" character varying, "volunteer_num" integer, "description" text, "community_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171221191551"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTasks (20171221191630)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.3ms)[0m  [1m[35mCREATE TABLE "tasks" ("id" bigserial primary key, "name" character varying, "description" character varying, "completed" boolean, "event_id" integer, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171221191630"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateMemberships (20171221191848)
+  [1m[35m (6.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (17.4ms)[0m  [1m[35mCREATE TABLE "memberships" ("id" bigserial primary key, "member_type" character varying, "user_id" integer, "community_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171221191848"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-12-22 20:04:02.134395"], ["updated_at", "2017-12-22 20:04:02.134395"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(2744104040621181210)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mCommunity Load (0.6ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mMembership Load (0.6ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships"[0m
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "last_name", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "james@email.com"], ["first_name", "james"], ["last_name", "graham"], ["password_digest", "$2a$10$uKMLQhkvuEax2MLDx/8ul.XYfV6Jw1y1jjd5s/8ZIYMhiCnrT.6sO"], ["created_at", "2017-12-22 20:04:09.787314"], ["updated_at", "2017-12-22 20:04:09.787314"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "last_name", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "ryan@email.com"], ["first_name", "ryan"], ["last_name", "mascolo"], ["password_digest", "$2a$10$c.q/9hLM6uPETYN9749rH.UgnO4HY01mOEs5NMbEUPgme0WhpE.Wy"], ["created_at", "2017-12-22 20:04:09.857099"], ["updated_at", "2017-12-22 20:04:09.857099"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "last_name", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "shirley@email.com"], ["first_name", "shirley"], ["last_name", "lin"], ["password_digest", "$2a$10$YDxo80C0dV6wKPcAWuw8YORfLViuN5edH2uZArHgMNfgZVghs5Sjy"], ["created_at", "2017-12-22 20:04:09.925712"], ["updated_at", "2017-12-22 20:04:09.925712"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "last_name", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "matteo@email.com"], ["first_name", "matteo"], ["last_name", "bruni"], ["password_digest", "$2a$10$tRKrVNHnVL0GFAPGf5hwI.w3X0U0oxS2sKj8uTBBmt.m3eb5imovy"], ["created_at", "2017-12-22 20:04:09.993231"], ["updated_at", "2017-12-22 20:04:09.993231"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "communities" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "bowling club"], ["description", "We go bowling"], ["created_at", "2017-12-22 20:04:10.003691"], ["updated_at", "2017-12-22 20:04:10.003691"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "memberships" ("member_type", "user_id", "community_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["member_type", "manager"], ["user_id", 1], ["community_id", 1], ["created_at", "2017-12-22 20:04:10.019660"], ["updated_at", "2017-12-22 20:04:10.019660"]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "memberships" ("member_type", "user_id", "community_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["member_type", "member"], ["user_id", 2], ["community_id", 1], ["created_at", "2017-12-22 20:04:10.028831"], ["updated_at", "2017-12-22 20:04:10.028831"]]
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "memberships" ("member_type", "user_id", "community_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["member_type", "member"], ["user_id", 3], ["community_id", 1], ["created_at", "2017-12-22 20:04:10.037808"], ["updated_at", "2017-12-22 20:04:10.037808"]]
+  [1m[35m (5.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "memberships" ("member_type", "user_id", "community_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["member_type", "member"], ["user_id", 4], ["community_id", 1], ["created_at", "2017-12-22 20:04:10.046592"], ["updated_at", "2017-12-22 20:04:10.046592"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "events" ("name", "date", "image", "volunteer_num", "description", "community_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Go Bowling"], ["date", "4713-01-01 BC"], ["image", "http://www.lincolnbowl.co.uk/wp-content/uploads/2016/02/bggg.jpg"], ["volunteer_num", 3], ["description", "We're all going bowling"], ["community_id", 1], ["created_at", "2017-12-22 20:04:10.061000"], ["updated_at", "2017-12-22 20:04:10.061000"]]
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "description", "event_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Get balls"], ["description", "go get all the bowling balls"], ["event_id", 1], ["user_id", 3], ["created_at", "2017-12-22 20:04:10.082996"], ["updated_at", "2017-12-22 20:04:10.082996"]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "description", "event_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "shine bowling balls"], ["description", "make sure that all the bowling balls are sparkling"], ["event_id", 1], ["user_id", 2], ["created_at", "2017-12-22 20:04:10.091966"], ["updated_at", "2017-12-22 20:04:10.091966"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "tasks" ("name", "description", "event_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "bring drinks"], ["description", "bring some adult beverages"], ["event_id", 1], ["user_id", 2], ["created_at", "2017-12-22 20:04:10.094662"], ["updated_at", "2017-12-22 20:04:10.094662"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/users/10" for 127.0.0.1 at 2017-12-22 15:12:43 -0500
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+Completed 404 Not Found in 29ms (ActiveRecord: 7.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=10):
+  
+app/controllers/users_controller.rb:8:in `show'
+Started GET "/users/10" for 127.0.0.1 at 2017-12-22 15:12:50 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+Completed 404 Not Found in 22ms (ActiveRecord: 11.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=10):
+  
+app/controllers/users_controller.rb:8:in `show'
+Started GET "/users/10" for 127.0.0.1 at 2017-12-22 15:12:57 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=10):
+  
+app/controllers/users_controller.rb:8:in `show'
+Started GET "/users/10" for 127.0.0.1 at 2017-12-22 15:13:06 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=10):
+  
+app/controllers/users_controller.rb:8:in `show'
+Started GET "/users/10" for 127.0.0.1 at 2017-12-22 15:14:38 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+Completed 404 Not Found in 6ms (ActiveRecord: 1.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=10):
+  
+app/controllers/users_controller.rb:8:in `show'
+Started GET "/users/10" for 127.0.0.1 at 2017-12-22 15:14:45 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (5.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+Completed 404 Not Found in 7ms (ActiveRecord: 5.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=10):
+  
+app/controllers/users_controller.rb:8:in `show'
+Started GET "/users/10" for 127.0.0.1 at 2017-12-22 15:14:49 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=10):
+  
+app/controllers/users_controller.rb:8:in `show'
+Started GET "/users/10" for 127.0.0.1 at 2017-12-22 15:16:04 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=10):
+  
+app/controllers/users_controller.rb:8:in `show'
+Started GET "/users/10" for 127.0.0.1 at 2017-12-22 15:16:09 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+Completed 404 Not Found in 5ms (ActiveRecord: 2.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=10):
+  
+app/controllers/users_controller.rb:8:in `show'
+Started GET "/users/10" for 127.0.0.1 at 2017-12-22 15:16:25 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 1.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=10):
+  
+app/controllers/users_controller.rb:8:in `show'
+Started GET "/users/10" for 127.0.0.1 at 2017-12-22 15:16:28 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+Completed 404 Not Found in 4ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=10):
+  
+app/controllers/users_controller.rb:8:in `show'
+Started GET "/users/10" for 127.0.0.1 at 2017-12-22 16:26:23 -0500
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+Completed 404 Not Found in 35ms (ActiveRecord: 9.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=10):
+  
+app/controllers/users_controller.rb:8:in `show'
+Started GET "/users/15" for 127.0.0.1 at 2017-12-22 16:26:29 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+Completed 404 Not Found in 54ms (ActiveRecord: 40.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=15):
+  
+app/controllers/users_controller.rb:8:in `show'
+Started GET "/users/1" for 127.0.0.1 at 2017-12-22 16:26:36 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mCommunity Load (0.8ms)[0m  [1m[34mSELECT "communities".* FROM "communities" INNER JOIN "memberships" ON "communities"."id" = "memberships"."community_id" WHERE "memberships"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 127ms (Views: 2.9ms | ActiveRecord: 28.7ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2017-12-22 16:26:45 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mCommunity Load (1.6ms)[0m  [1m[34mSELECT "communities".* FROM "communities" INNER JOIN "memberships" ON "communities"."id" = "memberships"."community_id" WHERE "memberships"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 60ms (Views: 2.0ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2017-12-22 16:29:05 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTask Load (1.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mCommunity Load (1.2ms)[0m  [1m[34mSELECT "communities".* FROM "communities" INNER JOIN "memberships" ON "communities"."id" = "memberships"."community_id" WHERE "memberships"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mEvent Load (1.5ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 26ms (Views: 2.2ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2017-12-22 16:29:34 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mCommunity Load (1.1ms)[0m  [1m[34mSELECT "communities".* FROM "communities" INNER JOIN "memberships" ON "communities"."id" = "memberships"."community_id" WHERE "memberships"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 203ms (Views: 4.8ms | ActiveRecord: 41.6ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-12-22 16:29:44 -0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+[active_model_serializers]   [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mEvent Load (1.7ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mTask Load (2.8ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mEvent Load (3.2ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mMembership Load (0.7ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   [1m[36mCommunity Load (0.8ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (2.5ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mCACHE Community Load (0.0ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (2.9ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 3]]
+[active_model_serializers]   [1m[36mCACHE Community Load (0.0ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (0.4ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   [1m[36mCACHE Community Load (0.4ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (164.1ms)
+Completed 200 OK in 253ms (Views: 203.2ms | ActiveRecord: 49.1ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-12-22 16:29:54 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mCommunity Load (0.4ms)[0m  [1m[34mSELECT "communities".* FROM "communities" INNER JOIN "memberships" ON "communities"."id" = "memberships"."community_id" WHERE "memberships"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 11ms (Views: 1.7ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2017-12-22 16:30:01 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mCommunity Load (1.0ms)[0m  [1m[34mSELECT "communities".* FROM "communities" INNER JOIN "memberships" ON "communities"."id" = "memberships"."community_id" WHERE "memberships"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 17ms (Views: 1.7ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2017-12-22 16:30:35 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (0.8ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mCommunity Load (0.4ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (156.46ms)
+Completed 200 OK in 195ms (Views: 155.5ms | ActiveRecord: 10.1ms)
+
+

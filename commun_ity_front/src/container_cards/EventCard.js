@@ -1,16 +1,16 @@
 import React from 'react'
 import { Card, Icon, Image } from 'semantic-ui-react'
 
-const EventCard = () => (
+const EventCard = ({name, date, image}) => (
   <Card>
-    <Image src='http://www.turnbacktogod.com/wp-content/uploads/2009/04/the-last-supper-03.jpg' />
+    <Image src={image} />
     <Card.Content>
       <Card.Header>
-        Potluck Dinner Party
+        {name}
       </Card.Header>
       <Card.Meta>
         <span className='date'>
-          6:30 on Sunday Febuary 31st
+          {date}
         </span>
       </Card.Meta>
     </Card.Content>

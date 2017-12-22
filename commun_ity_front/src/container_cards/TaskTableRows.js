@@ -1,14 +1,14 @@
 import React from 'react'
-import { Header, Table, Rating, Checkbox } from 'semantic-ui-react'
+import { Table, Checkbox } from 'semantic-ui-react'
 
-const TaskTableRows = () => {
+const TaskTableRows = ({description, event}) => {
   return (
       <Table.Row>
         <Table.Cell>
-          Cooking mashed potatoes and string bean cassorole
+          {description}
         </Table.Cell>
         <Table.Cell>
-          Ryan's Potluck
+          {event}
         </Table.Cell>
         <Table.Cell textAlign='center'>
             Monday, December 25th

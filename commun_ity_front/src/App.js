@@ -21,13 +21,15 @@ class App extends Component {
       <div className="App">
         <Router>
           <div>
-            <NavBar />
+            <div id="sidebar">
+              <SidebarLeft />
+            </div>
             <Route
               exact
-              path="/"
+              path="/login"
               render={() => <LogIn getUser={this.getUser} />}
             />
-            <Route exact path="/home" render={() => <UserHome />} />
+            <Route exact path="/" render={() => <UserHome />} />
           </div>
         </Router>
       </div>

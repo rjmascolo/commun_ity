@@ -23,7 +23,8 @@ Membership.create({member_type: "member", user: ryan, community: bowling})
 Membership.create({member_type: "member", user: shirley, community: bowling})
 Membership.create({member_type: "member", user: matteo, community: bowling})
 
-go_bowling = Event.create({name: "go bowling", date: Date.new, volunteer_num: 3, description: "We're all going bowling", community: bowling})
+go_bowling = Event.create({name: "Go Bowling", date: Date.new, volunteer_num: 3, description: "We're all going bowling", community: bowling, image:"http://www.lincolnbowl.co.uk/wp-content/uploads/2016/02/bggg.jpg"})
 
 Task.create({name: "Get balls", description: "go get all the bowling balls", event: go_bowling, user: shirley})
 Task.create({name: "shine bowling balls", description: "make sure that all the bowling balls are sparkling", event: go_bowling, user: ryan})
+Task.create({name: "bring drinks", description: "bring some adult beverages", event: go_bowling, user: ryan})

@@ -26,12 +26,12 @@ class UserHome extends React.Component{
       { menuItem: 'Your Tasks', render: () => <Tab.Pane attached={false}><TaskTable task= {this.state.tasks} /></Tab.Pane> }
     ]
     return(
-    <div>
+    <div id="user-home-div" >
       <h1 id="user-home-welcome">Welcome back Ryan!</h1>
       <p id="user-home-welcome">Check out your upcoming events and tasks below.</p>
       <div id="user-home-tab">
-      <Tab panes={panes} data={this.state} />
-    </div>
+        <Tab panes={panes} data={this.state} />
+      </div>
     </div>
     )
   }

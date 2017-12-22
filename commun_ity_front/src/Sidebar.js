@@ -1,41 +1,56 @@
 import React, { Component } from 'react'
-import { Sidebar, Segment, Button, Menu, Image, Icon, Header } from 'semantic-ui-react'
+import { Menu } from 'semantic-ui-react'
 
-class SidebarLeftOverlay extends Component {
-  state = { visible: false }
-
-  toggleVisibility = () => this.setState({ visible: !this.state.visible })
+export default class SidebarLeft extends Component {
+  handleItemClick = name => this.setState({ activeItem: name })
 
   render() {
-    const { visible } = this.state
+    const { activeItem } = this.state || {}
+
     return (
-      <div>
-        <Button onClick={this.toggleVisibility}>Toggle Visibility</Button>
-        <Sidebar.Pushable as={Segment}>
-          <Sidebar as={Menu} animation='overlay' width='thin' visible={visible} icon='labeled' vertical inverted>
-            <Menu.Item name='home'>
-              <Icon name='home' />
-              Home
+      <Menu vertical idName="sidebar">
+        <Menu.Item>
+          <Menu.Header>Products</Menu.Header>
+
+          <Menu.Menu>
+            <Menu.Item name='enterprise' active={activeItem === 'enterprise'} onClick={this.handleItemClick} />
+            <Menu.Item name='consumer' active={activeItem === 'consumer'} onClick={this.handleItemClick} />
+          </Menu.Menu>
+        </Menu.Item>
+
+        <Menu.Item>
+          <Menu.Header>CMS Solutions</Menu.Header>
+
+          <Menu.Menu>
+            <Menu.Item name='rails' active={activeItem === 'rails'} onClick={this.handleItemClick} />
+            <Menu.Item name='python' active={activeItem === 'python'} onClick={this.handleItemClick} />
+            <Menu.Item name='php' active={activeItem === 'php'} onClick={this.handleItemClick} />
+          </Menu.Menu>
+        </Menu.Item>
+
+        <Menu.Item>
+          <Menu.Header>Hosting</Menu.Header>
+
+          <Menu.Menu>
+            <Menu.Item name='shared' active={activeItem === 'shared'} onClick={this.handleItemClick} />
+            <Menu.Item name='dedicated' active={activeItem === 'dedicated'} onClick={this.handleItemClick} />
+          </Menu.Menu>
+        </Menu.Item>
+
+        <Menu.Item>
+          <Menu.Header>Support</Menu.Header>
+
+          <Menu.Menu>
+            <Menu.Item name='email' active={activeItem === 'email'} onClick={this.handleItemClick}>
+              E-mail Support
             </Menu.Item>
-            <Menu.Item name='gamepad'>
-              <Icon name='gamepad' />
-              Games
+
+            <Menu.Item name='faq' active={activeItem === 'faq'} onClick={this.handleItemClick}>
+              FAQs
             </Menu.Item>
-            <Menu.Item name='camera'>
-              <Icon name='camera' />
-              Channels
-            </Menu.Item>
-          </Sidebar>
-          <Sidebar.Pusher>
-            <Segment basic>
-              <Header as='h3'>Application Content</Header>
-              <Image src='/assets/images/wireframe/paragraph.png' />
-            </Segment>
-          </Sidebar.Pusher>
-        </Sidebar.Pushable>
-      </div>
+          </Menu.Menu>
+        </Menu.Item>
+      </Menu>
     )
   }
 }
-
-export default SidebarLeftOverlay

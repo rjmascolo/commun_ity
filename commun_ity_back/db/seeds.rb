@@ -27,3 +27,4 @@ go_bowling = Event.create({name: "go bowling", date: Date.new, volunteer_num: 3,
 
 Task.create({name: "Get balls", description: "go get all the bowling balls", event: go_bowling})
 Task.create({name: "shine bowling balls", description: "make sure that all the bowling balls are sparkling", event: go_bowling, user: ryan})
+Task.create({name: "bring drinks", description: "bring some adult beverages", event: go_bowling, user: ryan})

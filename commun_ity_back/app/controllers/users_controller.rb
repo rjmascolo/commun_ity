@@ -6,14 +6,14 @@ class UsersController < ApplicationController
 
   def show
     user = User.find(params[:id])
-    render json: user
+    render json: user.to_json(only:[:id, :email, :first_name, :last_name, :profile_pic], include: [:tasks, :communities])
   end
 
   def create
     user = User.new(user_params)
     if user.save
       render json: "Community Created"
-    else 
+    else
       render json: {errors: user.errors}
     end
   end

@@ -28,6 +28,14 @@ export default class SidebarLeft extends Component {
           </Menu.Menu>
         </Menu.Item>
 
+        <Menu.Item>
+          <Menu.Header>Settings</Menu.Header>
+
+          <Menu.Menu>
+            <Menu.Item name='Log Out' active={activeItem === 'rails'} onClick={this.handleItemClick} />
+          </Menu.Menu>
+        </Menu.Item>
+
       </Menu>
     )
   }

@@ -1,6 +1,7 @@
 import React from 'react'
 import EventsContainer from '../containers/EventsContainer'
 import TaskTable from '../containers/TasksTable'
+import MyCalendar from '../containers/calendar'
 import { Tab } from 'semantic-ui-react'
 
 let URL = "http://localhost:3000/users/10"
@@ -29,9 +30,10 @@ class UserHome extends React.Component{
     <div id="user-home-div" >
       <h1 id="user-home-welcome">Welcome back Ryan!</h1>
       <p id="user-home-welcome">Check out your upcoming events and tasks below.</p>
-      <div id="user-home-tab">
+      {/* <div id="user-home-tab">
         <Tab panes={panes} data={this.state} />
-      </div>
+      </div> */}
+      <MyCalendar />
     </div>
     )
   }

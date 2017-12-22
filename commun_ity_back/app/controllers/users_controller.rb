@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def index
     users = User.all
-    render json: users
+    render json: User.all
   end
 
   def show
@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   def create
     user = User.new(user_params)
     if user.save
-      render json: "Community Created"
+      render json: "User Created"
     else 
       render json: {errors: user.errors}
     end

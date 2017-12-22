@@ -1,22 +1,37 @@
 import React from 'react'
 import EventsContainer from '../containers/EventsContainer'
 import TaskTable from '../containers/TasksTable'
-import { Tab, Header, Segment } from 'semantic-ui-react'
+import { Tab } from 'semantic-ui-react'
 
-const panes = [
-  { menuItem: 'Your Events', render: () => <Tab.Pane attached={false}><EventsContainer /></Tab.Pane> },
-  { menuItem: 'Your Tasks', render: () => <Tab.Pane attached={false}><TaskTable /></Tab.Pane> }
-]
+let URL = "http://localhost:3000/users/10"
+
 
 class UserHome extends React.Component{
 
-  render(){
+  state = {
+    tasks:[],
+    events:[],
+    communities:[]
+  }
 
+  componentDidMount(){
+    fetch(URL).then(res => res.json()).then(userData => {
+      this.setState({tasks: userData.tasks, events: userData.events, communities: userData.communities})
+    })
+  }
+
+  render(){
+    let panes = [
+      { menuItem: 'Your Events', render: () => <Tab.Pane attached={false}><EventsContainer events= {this.state.events} /></Tab.Pane> },
+      { menuItem: 'Your Tasks', render: () => <Tab.Pane attached={false}><TaskTable task= {this.state.tasks} /></Tab.Pane> }
+    ]
     return(
     <div>
-      <h1>Welcome back Ryan!</h1>
-      <p>Check out your upcoming events and tasks below.</p>
-      <Tab panes={panes} />
+      <h1 id="user-home-welcome">Welcome back Ryan!</h1>
+      <p id="user-home-welcome">Check out your upcoming events and tasks below.</p>
+      <div id="user-home-tab">
+      <Tab panes={panes} data={this.state} />
+    </div>
     </div>
     )
   }

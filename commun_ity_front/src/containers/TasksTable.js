@@ -1,9 +1,12 @@
 import React from 'react'
-import { Header, Table, Icon } from 'semantic-ui-react'
+import { Header, Table } from 'semantic-ui-react'
 import TaskTableRows from '../container_cards/TaskTableRows'
 
-const TaskTable = () => {
-
+const TaskTable = ({task}) => {
+  const taskData = task.map( (taskDets, i) => {
+    return <TaskTableRows key={i} name={taskDets.name} description={taskDets.description} event={taskDets.event_id}/>
+  })
+  console.log(task)
   return (
 
     <div>
@@ -25,8 +28,7 @@ const TaskTable = () => {
     </Table.Header>
 
     <Table.Body>
-      <TaskTableRows />
-      <TaskTableRows />
+      {taskData}
     </Table.Body>
   </Table>
   </div>

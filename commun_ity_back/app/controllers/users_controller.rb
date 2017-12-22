@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
   def show
     user = User.find(params[:id])
-    render json: user.to_json(only:[:id, :email, :first_name, :last_name, :profile_pic], include: [:tasks, :communities])
+    render json: user.to_json(only:[:id, :email, :first_name, :last_name, :profile_pic], include: [:tasks, :communities, :events])
   end
 
   def create

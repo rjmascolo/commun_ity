@@ -7,14 +7,17 @@ const EventsBrowseItem = ({event}) => {
       <Item.Image src={event.image} />
 
       <Item.Content>
-        <Item.Header as='a'></Item.Header>
+        <Item.Header as='a'>{event.name}</Item.Header>
         <Item.Meta>
-          <span className='cinema'>{event.name}</span>
+          <span className='cinema'>Roco's Bowling Alley</span>
         </Item.Meta>
         <Item.Description>{event.description}</Item.Description>
         <Item.Extra>
-          <Label>IMAX</Label>
-          <Label icon='globe' content='Additional Languages' />
+          <Button primary floated='right'>
+            Get Details
+            <Icon name='right chevron' />
+          </Button>
+          <Label><Icon name='group' /> x People Going</Label>
         </Item.Extra>
       </Item.Content>
     </Item>

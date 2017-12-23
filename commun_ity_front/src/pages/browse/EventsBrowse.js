@@ -21,9 +21,12 @@ class EventsBrowse extends React.Component{
     <div id="user-home-div" >
       <h1 id="user-home-welcome">Events In Your Communities</h1>
       <p id="user-home-welcome">Check out your upcoming events in your communities below.</p>
-      <Item.Group divided>
-        {eventDets}
-      </Item.Group>
+      <br/>
+      <div id="browse-event-card-container">
+        <Item.Group divided>
+          {eventDets}
+        </Item.Group>
+      </div>
     </div>
     )
   }

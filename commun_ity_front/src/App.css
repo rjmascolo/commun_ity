@@ -31,3 +31,8 @@
   height: 400px;
   margin-right: 20px;
 }
+
+#browse-event-card-container {
+  width: 90%;
+  text-align:left;
+}

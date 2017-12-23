@@ -8,10 +8,10 @@ const TaskTableRows = ({description, event}) => {
           {description}
         </Table.Cell>
         <Table.Cell>
-          {event}
+          {event.name}
         </Table.Cell>
         <Table.Cell textAlign='center'>
-            Monday, December 25th
+            {event.date}
         </Table.Cell>
         <Table.Cell collapsing >
           <Checkbox toggle />

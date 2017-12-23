@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     user = User.new(user_params)
     if user.save
       render json: "User Created"
-    else 
+    else
       render json: {errors: user.errors}
     end
   end

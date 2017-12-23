@@ -1,22 +1,32 @@
 import React from 'react'
-import TasksTable from '../../containers/TasksTable'
+import {Item} from 'semantic-ui-react'
+import EventsBrowserItem from '../../container_cards/EventBrowseItem'
 
 
-class TasksPage extends React.Component{
+let URL = "http://localhost:3000/events"
 
-  capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
+class EventsBrowse extends React.Component{
+
+  state = {
+    events:[]
+  }
+
+  componentDidMount(){
+    fetch(URL).then(res => res.json()).then( events => this.setState({events: events}))
   }
 
   render(){
+    const eventDets = this.state.events.map((event, id) => <EventsBrowserItem event={event} key={id} /> )
     return(
     <div id="user-home-div" >
-      <h1 id="user-home-welcome">Welcome back {this.capitalizeFirstLetter(this.props.user.first_name)}!</h1>
-      <p id="user-home-welcome">Check out your upcoming events and tasks below.</p>
-      <TasksTable tasks={this.props.tasks}/>
+      <h1 id="user-home-welcome">Events In Your Communities</h1>
+      <p id="user-home-welcome">Check out your upcoming events in your communities below.</p>
+      <Item.Group divided>
+        {eventDets}
+      </Item.Group>
     </div>
     )
   }
 }
 
-export default TasksPage
+export default EventsBrowse

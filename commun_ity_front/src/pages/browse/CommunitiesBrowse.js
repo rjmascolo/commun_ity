@@ -1,22 +1,25 @@
 import React from 'react'
-import TasksTable from '../../containers/TasksTable'
 
+let URL = "http://localhost:3000/communities"
 
-class TasksPage extends React.Component{
+class CommunitiesBrowse extends React.Component{
+  state = {
+    communitities:[]
+  }
 
-  capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
+  componentDidMount(){
+    fetch(URL).then(res => res.json()).then( communities => this.setState({communities}))
   }
 
   render(){
+    console.log(this.state.communities)
     return(
     <div id="user-home-div" >
-      <h1 id="user-home-welcome">Welcome back {this.capitalizeFirstLetter(this.props.user.first_name)}!</h1>
-      <p id="user-home-welcome">Check out your upcoming events and tasks below.</p>
-      <TasksTable tasks={this.props.tasks}/>
+      <h1 id="user-home-welcome">Communities Around You</h1>
+      <p id="user-home-welcome">Take a look through the communities in your area</p>
     </div>
     )
   }
 }
 
-export default TasksPage
+export default CommunitiesBrowse

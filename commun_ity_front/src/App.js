@@ -8,6 +8,8 @@ import CalendarPage from "./pages/dashboard/CalendarPage";
 import LogIn from "./pages/LogIn";
 import EventsPage from "./pages/dashboard/EventsPage";
 import TasksPage from "./pages/dashboard/TasksPage";
+import CommunitiesBrowse from './pages/browse/CommunitiesBrowse'
+import EventsBrowse from './pages/browse/EventsBrowse'
 
 
 let URL = "http://localhost:3000/users/2"
@@ -23,7 +25,6 @@ class App extends Component {
 
   componentDidMount(){
     fetch(URL).then(res => res.json()).then(userData => {
-      console.log(userData.member_of)
       this.setState(
         {
           tasks: userData.tasks,
@@ -48,9 +49,14 @@ class App extends Component {
               path="/login"
               render={() => <LogIn getUser={this.getUser} />}
             />
-            <Route exact path="/calendar" render={() => <CalendarPage events={this.state.events} tasks={this.state.tasks} user={this.state.user}/>} />
-            <Route exact path="/events" render={() => <EventsPage events={this.state.events} user={this.state.user}/>} />
-            <Route exact path="/tasks" render={() => <TasksPage tasks={this.state.tasks} user={this.state.user}/>} />
+            {/* Dashboard routes */}
+            <Route exact path="/your-calendar" render={() => <CalendarPage events={this.state.events} tasks={this.state.tasks} user={this.state.user}/>} />
+            <Route exact path="/your-events" render={() => <EventsPage events={this.state.events} user={this.state.user}/>} />
+            <Route exact path="/your-tasks" render={() => <TasksPage tasks={this.state.tasks} user={this.state.user}/>} />
+            {/* browse routes */}
+            <Route exact path="/communities" render={() => <CommunitiesBrowse />} />
+            <Route exact path="/events" render={() => <EventsBrowse />} />
+
           </div>
         </Router>
       </div>

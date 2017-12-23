@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { NavLink } from 'react-router-dom'
 import { Menu } from 'semantic-ui-react'
 
 export default class SidebarLeft extends Component {
@@ -13,9 +14,9 @@ export default class SidebarLeft extends Component {
           <Menu.Header>Your Dashboard</Menu.Header>
 
           <Menu.Menu>
-            <Menu.Item name='Calendar' active={activeItem === 'enterprise'} onClick={this.handleItemClick} />
-            <Menu.Item name='Events' active={activeItem === 'enterprise'} onClick={this.handleItemClick} />
-            <Menu.Item name='Tasks' active={activeItem === 'consumer'} onClick={this.handleItemClick} />
+            <NavLink to= "/calendar"><Menu.Item name='Calendar' active={activeItem === 'enterprise'} onClick={this.handleItemClick} /></NavLink>
+            <NavLink to= "/events"><Menu.Item name='Events' active={activeItem === 'enterprise'} onClick={this.handleItemClick} /></NavLink>
+            <NavLink to= "/tasks"><Menu.Item name='Tasks' active={activeItem === 'consumer'} onClick={this.handleItemClick} /></NavLink>
           </Menu.Menu>
         </Menu.Item>
 

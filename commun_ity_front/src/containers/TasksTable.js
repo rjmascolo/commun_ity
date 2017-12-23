@@ -2,11 +2,12 @@ import React from 'react'
 import { Header, Table } from 'semantic-ui-react'
 import TaskTableRows from '../container_cards/TaskTableRows'
 
-const TasksTable = ({task}) => {
-  const taskData = task.map( (taskDets, i) => {
-    return <TaskTableRows key={i} name={taskDets.name} description={taskDets.description} event={taskDets.event_id}/>
+const TasksTable = ({tasks}) => {
+  const taskData = tasks.map( (taskDets, i) => {
+    console.log(taskDets.event.name);
+    return <TaskTableRows key={i} name={taskDets.name} description={taskDets.description} event={taskDets.event}/>
   })
-  console.log(task)
+
   return (
 
     <div>

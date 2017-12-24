@@ -1,27 +1,29 @@
 import React from 'react'
 import { Button, Icon, Image as ImageComponent, Item, Label } from 'semantic-ui-react'
 
-const EventsBrowseItem = () => {
+
+const CommunityBrowseCard = ({community}) => {
+  const members = community.members.length
   return (
     <Item>
-      <Item.Image src={event.image} />
+      <Item.Image src="http://cdn2us.denofgeek.com/sites/denofgeekus/files/kinopoisk-ru-big-lebowski_2c-the-588419.jpg" />
 
       <Item.Content>
-        <Item.Header as='a'>{event.name}</Item.Header>
+        <Item.Header as='a'>{community.name}</Item.Header>
         <Item.Meta>
-          <span className='cinema'>Roco's Bowling Alley(need to add a location value for events)</span>
+          <span className='cinema'>Brooklyn, NY (need to add a location value for events)</span>
         </Item.Meta>
-        <Item.Description>{event.description}</Item.Description>
+        <Item.Description>{community.description}</Item.Description>
         <Item.Extra>
           <Button primary floated='right'>
-            Get Details
+            Join Community
             <Icon name='right chevron' />
           </Button>
-          <Label><Icon name='group' /> x People Going</Label>
+          <Label><Icon name='group' /> {members} People Belong</Label>
         </Item.Extra>
       </Item.Content>
     </Item>
   )
 }
 
-export default EventsBrowseItem
+export default CommunityBrowseCard

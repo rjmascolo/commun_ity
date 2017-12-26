@@ -2,37 +2,27 @@ import React from 'react'
 import { Header, Table } from 'semantic-ui-react'
 import TaskTableRows from '../container_cards/TaskTableRows'
 
-const TasksTable = ({tasks}) => {
-  const taskData = tasks.map( (taskDets, i) => {
-    console.log(taskDets.event.name);
-    return <TaskTableRows key={i} name={taskDets.name} description={taskDets.description} event={taskDets.event}/>
-  })
+const TasksTable = ({tasks, tableType}) => {
+  const taskDataDash = tableType === "dashboard" && tasks ? (tasks.map( (taskDets, i) => {
+    return <TaskTableRows key={i} name={taskDets.name} description={taskDets.description} event={taskDets.event} tableType="dashboard"/>
+  })) : null
+  const taskDataPage = tableType !== "dashboard" && tasks ? tasks.map( (taskDets, i) => <TaskTableRows key={i} name={taskDets.name} description={taskDets.description} tableType="event-page"/>) : null
 
   return (
-
-    <div>
-      <div>
-        <Header as='h2' icon textAlign='center'>
-          <Header.Content>
-            Your Tasks
-          </Header.Content>
-        </Header>
-      </div>
   <Table celled padded>
     <Table.Header>
       <Table.Row>
         <Table.HeaderCell>Task Description</Table.HeaderCell>
-        <Table.HeaderCell>Task's Event</Table.HeaderCell>
-        <Table.HeaderCell>Event's Date</Table.HeaderCell>
-        <Table.HeaderCell singleLine>Task Completed</Table.HeaderCell>
+        {tableType === "dashboard" ? <Table.HeaderCell>Task's Event</Table.HeaderCell> : null}
+        {tableType === "dashboard" ? <Table.HeaderCell>Event's Date</Table.HeaderCell> : null}
+        {tableType === "dashboard" ? <Table.HeaderCell singleLine>Task Completed</Table.HeaderCell> : <Table.HeaderCell singleLine>Assigned To</Table.HeaderCell> }
       </Table.Row>
     </Table.Header>
 
     <Table.Body>
-      {taskData}
+      {tableType === "dashboard" ? taskDataDash : taskDataPage}
     </Table.Body>
   </Table>
-  </div>
  )
 }
 

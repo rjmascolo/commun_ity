@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Icon, Image as ImageComponent, Item, Label } from 'semantic-ui-react'
+import { Button, Icon, Item, Label } from 'semantic-ui-react'
 
 
 const CommunityBrowseCard = ({community}) => {

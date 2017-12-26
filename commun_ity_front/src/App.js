@@ -10,6 +10,8 @@ import EventsPage from "./pages/dashboard/EventsPage";
 import TasksPage from "./pages/dashboard/TasksPage";
 import CommunitiesBrowse from './pages/browse/CommunitiesBrowse'
 import EventsBrowse from './pages/browse/EventsBrowse'
+import Event from './pages/individual_pages/Event'
+import Community from './pages/individual_pages/Community'
 
 
 let URL = "http://localhost:3000/users/2"
@@ -56,7 +58,9 @@ class App extends Component {
             {/* browse routes */}
             <Route exact path="/communities" render={() => <CommunitiesBrowse />} />
             <Route exact path="/events" render={() => <EventsBrowse />} />
-
+            {/* individual pages routes */}
+            <Route path="/events/:id" render={(args) => <Event id={args.match.params.id} /> } />
+            <Route path="/community/:id" render={(args) => <Community id={args.match.params.id} />} />
           </div>
         </Router>
       </div>

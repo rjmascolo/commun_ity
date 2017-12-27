@@ -8,7 +8,7 @@ import 'react-big-calendar/lib/css/react-big-calendar.css'
 BigCalendar.momentLocalizer(moment); // or globalizeLocalizer
 
 const MyCalendar = () => {
-  const x = [
+  let x = [
     {
       'title': 'Bowling Event',
       'start':new Date(2017, 11, 28, 7, 0, 0),

@@ -8,7 +8,14 @@ import 'react-big-calendar/lib/css/react-big-calendar.css'
 BigCalendar.momentLocalizer(moment); // or globalizeLocalizer
 
 const MyCalendar = () => {
-  const x= []
+  const x = [
+    {
+      'title': 'Bowling Event',
+      'start':new Date(2017, 11, 28, 7, 0, 0),
+      'end': new Date(2017, 11, 28, 10, 30, 0)
+  }
+  ]
+  console.log(moment().format('LL'))
   return (
     <div id="calendar-div-container">
       <br/>
@@ -17,9 +24,8 @@ const MyCalendar = () => {
         startAccessor='startDate'
         endAccessor='endDate'
         views={{
-  month: true,
-  week: false
-}}
+        month: true
+      }}
       />
     </div>
   )

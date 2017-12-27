@@ -1,5 +1,5 @@
 import React from 'react'
-import { Header, Table } from 'semantic-ui-react'
+import { Table } from 'semantic-ui-react'
 import TaskTableRows from '../container_cards/TaskTableRows'
 
 const TasksTable = ({tasks, tableType}) => {

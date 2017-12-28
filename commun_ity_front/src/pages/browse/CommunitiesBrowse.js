@@ -14,7 +14,16 @@ class CommunitiesBrowse extends React.Component{
   }
 
   render(){
-    const communitiesDets = this.state.communities ? this.state.communities.map(community => <CommunityBrowseCard community={community} />) : null
+    const communitiesDets = this.state.communities ? this.state.communities.map(community => {
+      return (
+        <CommunityBrowseCard
+            community={community}
+            joinCommunity={this.props.joinCommunity}
+            userId={this.props.user.id}
+            alreadyJoined={this.props.user.communities.map(community => community.id).includes(community.id)}
+          />) } )
+      : null
+
     return(
     <div id="user-home-div">
       <h1 id="user-home-welcome">Communities Around You</h1>

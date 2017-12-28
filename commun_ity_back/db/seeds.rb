@@ -31,7 +31,7 @@ book_club = Community.create({name: "Book Club", description: "Every month, we r
 
 Membership.create({member_type: "manager", user: james, community: book_club})
 
-january_book = Event.create({name: "January Meeting: Cat's Cradle", start_date: DateTime.new(2018,1,6,13,30), end_date: DateTime.new(2018,1,6,14,30), volunteer_num: 3, description: "This months book is Cat's Craddle by Kurt Vonnegut. We will also be having beer and wings.", community: book_club, image:"https://i.pinimg.com/originals/03/75/59/037559dbe8d7014ecfdb6140e9e14bbd.png", location: "927 Putnam Ave, Brooklyn, NY 11221" })
+january_book = Event.create({name: "January Meeting: Cat's Cradle", start_date: DateTime.new(2018,1,6,13,30), end_date: DateTime.new(2018,1,6,14,30), volunteer_num: 3, description: "This months book is Cat's Craddle by Kurt Vonnegut. We will also be having beer and wings.", community: book_club, image:"https://upload.wikimedia.org/wikipedia/en/thumb/e/e6/CatsCradle%281963%29.jpg/220px-CatsCradle%281963%29.jpg", location: "927 Putnam Ave, Brooklyn, NY 11221" })
 
 Task.create({description: "bring buffalo wings", event: january_book, user: shirley})
 Task.create({description: "bring a 6 pack of Pale Ale", event: january_book, user: ryan})

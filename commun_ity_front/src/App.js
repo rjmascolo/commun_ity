@@ -14,7 +14,7 @@ import Event from './pages/individual_pages/Event'
 import Community from './pages/individual_pages/Community'
 
 
-let URL = "http://localhost:3000/users/10"
+let URL = "http://localhost:3000/users/22"
 
 class App extends Component {
   state = {
@@ -51,13 +51,13 @@ class App extends Component {
   joinCommunity = (user, community) => {
     let url = "http://localhost:3000/memberships"
     let object = {
-  method: 'post',
-  headers: {
-    'accept': 'application/json',
-    'content-type': 'application/json'
-  },
-  body: JSON.stringify({membership: {user_id: user, community_id: community, member_type: "member" }})
-  }
+      method: 'post',
+      headers: {
+        'accept': 'application/json',
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify({membership: {user_id: user, community_id: community, member_type: "member" }})
+      }
     fetch(url,object).then(res => res.json()).then(console.log())
   }
 
@@ -80,7 +80,7 @@ class App extends Component {
             <Route exact path="/your-tasks" render={() => <TasksPage tasks={this.state.user.tasks} user={this.state.user}/>} />
             {/* browse routes */}
             <Route exact path="/communities" render={() => <CommunitiesBrowse user={this.state.user} joinCommunity={this.joinCommunity}/>} />
-            <Route exact path="/events" render={() => <EventsBrowse user={this.state.user} joinCommunity={this.joinCommunity} />} />
+            <Route exact path="/events" render={() => <EventsBrowse user={this.state.user} addEvent={this.joinCommunity} />} />
             {/* individual pages routes */}
             <Route path="/events/:id" render={(args) => <Event id={args.match.params.id} /> } />
             <Route path="/community/:id" render={(args) => <Community id={args.match.params.id} />} />

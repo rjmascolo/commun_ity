@@ -14,28 +14,51 @@ import Event from './pages/individual_pages/Event'
 import Community from './pages/individual_pages/Community'
 
 
-let URL = "http://localhost:3000/users/2"
+let URL = "http://localhost:3000/users/10"
 
 class App extends Component {
   state = {
-    tasks:[],
     events:[],
     communities:[],
     user_type: "",
-    user: { id: null, first_name: '', last_name:''}
+    user: {
+      id: null,
+      first_name: '',
+      last_name:'',
+      communities:[],
+      tasks:[],
+      events:[]
+    }
   }
 
   componentDidMount(){
     fetch(URL).then(res => res.json()).then(userData => {
       this.setState(
         {
-          tasks: userData.tasks,
-          events: userData.events,
-          communities: userData.member_of,
-          user: { id: userData.id, first_name: userData.first_name, last_name: userData.last_name}
+          user: {
+            id: userData.id,
+            first_name: userData.first_name,
+            last_name: userData.last_name,
+            tasks: userData.tasks,
+            events: userData.events,
+            communities: userData.member_of,
+          }
         }
       )
     })
+  }
+
+  joinCommunity = (user, community) => {
+    let url = "http://localhost:3000/memberships"
+    let object = {
+  method: 'post',
+  headers: {
+    'accept': 'application/json',
+    'content-type': 'application/json'
+  },
+  body: JSON.stringify({membership: {user_id: user, community_id: community, member_type: "member" }})
+  }
+    fetch(url,object).then(res => res.json()).then(console.log())
   }
 
   render() {
@@ -52,12 +75,12 @@ class App extends Component {
               render={() => <LogIn getUser={this.getUser} />}
             />
             {/* Dashboard routes */}
-            <Route exact path="/your-calendar" render={() => <CalendarPage events={this.state.events} tasks={this.state.tasks} user={this.state.user}/>} />
-            <Route exact path="/your-events" render={() => <EventsPage events={this.state.events} user={this.state.user}/>} />
-            <Route exact path="/your-tasks" render={() => <TasksPage tasks={this.state.tasks} user={this.state.user}/>} />
+            <Route exact path="/your-calendar" render={() => <CalendarPage events={this.state.user.events} tasks={this.state.user.tasks} user={this.state.user}/>} />
+            <Route exact path="/your-events" render={() => <EventsPage events={this.state.user.events} user={this.state.user}/>} />
+            <Route exact path="/your-tasks" render={() => <TasksPage tasks={this.state.user.tasks} user={this.state.user}/>} />
             {/* browse routes */}
-            <Route exact path="/communities" render={() => <CommunitiesBrowse />} />
-            <Route exact path="/events" render={() => <EventsBrowse />} />
+            <Route exact path="/communities" render={() => <CommunitiesBrowse user={this.state.user} joinCommunity={this.joinCommunity}/>} />
+            <Route exact path="/events" render={() => <EventsBrowse user={this.state.user} joinCommunity={this.joinCommunity} />} />
             {/* individual pages routes */}
             <Route path="/events/:id" render={(args) => <Event id={args.match.params.id} /> } />
             <Route path="/community/:id" render={(args) => <Community id={args.match.params.id} />} />

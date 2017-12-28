@@ -12,14 +12,7 @@ const EventsContainer = ({events}) => {
   })) : <div>Loading</div>
   return(
     <div>
-    <div>
-      <Header as='h2' icon textAlign='center'>
-        <Header.Content>
-           Your Events
-        </Header.Content>
-      </Header>
-    </div>
-
+      <br/>
     <Grid stackable columns={5}>
       {eventData}
     </Grid>

@@ -12,8 +12,8 @@ class MembershipsController < ApplicationController
   def create
     membership = Membership.new(membership_params)
     if membership.save
-      render json: "Community Created"
-    else 
+      render json: membership
+    else
       render json: {errors: membership.errors}
     end
   end
@@ -26,6 +26,6 @@ class MembershipsController < ApplicationController
 
   private
   def membership_params
-    params.require(:membership).permit(:name, :description)
+    params.require(:membership).permit(:user_id, :community_id, :member_type)
   end
 end

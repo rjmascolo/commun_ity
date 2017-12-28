@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20171221191848) do
     t.string "image"
     t.integer "volunteer_num"
     t.text "description"
+    t.string "location"
     t.integer "community_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -43,7 +44,6 @@ ActiveRecord::Schema.define(version: 20171221191848) do
   end
 
   create_table "tasks", force: :cascade do |t|
-    t.string "name"
     t.string "description"
     t.boolean "completed"
     t.integer "event_id"

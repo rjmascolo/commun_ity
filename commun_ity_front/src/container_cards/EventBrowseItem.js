@@ -2,6 +2,7 @@ import React from 'react'
 import { Button, Icon, Item, Label } from 'semantic-ui-react'
 
 const EventsBrowseItem = ({event}) => {
+  let href = `/events/${event.id}`
   return (
     <Item>
       <Item.Image src={event.image} />
@@ -13,11 +14,19 @@ const EventsBrowseItem = ({event}) => {
         </Item.Meta>
         <Item.Description>{event.description}</Item.Description>
         <Item.Extra>
-          <Button primary floated='right'>
+          <Button primary floated='right' href={href}>
             Get Details
             <Icon name='right chevron' />
           </Button>
-          <Label><Icon name='group' /> x People Going</Label>
+          <Button
+            floated='right'
+            basic
+            color='blue'
+            content='RSVP'
+            icon='calendar'
+            // onClick={this.props.goingToEvent}
+            label={{ as: 'a', basic: true, color: 'blue', pointing: 'left', content: `x People Going` }}
+          />
         </Item.Extra>
       </Item.Content>
     </Item>

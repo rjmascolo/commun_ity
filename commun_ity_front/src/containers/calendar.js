@@ -11,11 +11,11 @@ const MyCalendar = () => {
   let x = [
     {
       'title': 'Bowling Event',
-      'start':new Date(2017, 11, 28, 7, 0, 0),
-      'end': new Date(2017, 11, 28, 10, 30, 0)
+      'start': moment(new Date(2017, 11, 28, 7, 0, 0)),
+      'end': moment(new Date(2017, 11, 28, 10, 30, 0))
   }
   ]
-  console.log(moment().format('LL'))
+  console.log(moment(x[0]["start"]))
   return (
     <div id="calendar-div-container">
       <br/>

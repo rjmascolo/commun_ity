@@ -17,7 +17,7 @@ const EventCard = ({name, date, image}) => (
     <Card.Content extra>
       <a>
         <Icon name='user' />
-        22 People Going
+        x People Going
       </a>
     </Card.Content>
   </Card>

@@ -40,7 +40,7 @@ class App extends Component {
             first_name: userData.first_name,
             last_name: userData.last_name,
             tasks: userData.tasks,
-            events: userData.events,
+            events: userData.user_events,
             communities: userData.member_of,
           }
         }
@@ -62,6 +62,7 @@ class App extends Component {
   }
 
   render() {
+    console.log()
     return (
       <div className="App">
         <Router>

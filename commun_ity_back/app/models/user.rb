@@ -10,9 +10,13 @@ class User < ApplicationRecord
     managers.map {|manager| manager.community.slice(:name, :description, :id)}
   end
 
+  def user_events
+    self.events.uniq
+  end
+
   def member_of
     members = self.memberships.select { |membership| membership['member_type'] == 'member'}
     members.map {|member| member.community.slice(:name, :description, :id)}
   end
-  
+
 end

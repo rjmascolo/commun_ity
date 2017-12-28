@@ -14,7 +14,7 @@ import Event from './pages/individual_pages/Event'
 import Community from './pages/individual_pages/Community'
 
 
-let URL = "http://localhost:3000/users/22"
+let URL = "http://localhost:3000/users/2"
 
 class App extends Component {
   state = {

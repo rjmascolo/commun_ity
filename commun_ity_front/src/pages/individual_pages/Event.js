@@ -1,10 +1,7 @@
 import React from 'react'
-import UserCard from '../../container_cards/UserCard'
-import TaskTableRows from '../../container_cards/TaskTableRows'
+// import UserCard from '../../container_cards/UserCard'
 import TasksTable from '../../containers/TasksTable'
-
-
-import { Header, Image, Item } from 'semantic-ui-react'
+import { Header, Image } from 'semantic-ui-react'
 
 class Event extends React.Component{
   state = {

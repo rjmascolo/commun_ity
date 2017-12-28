@@ -14350,3 +14350,1582 @@ Processing by UsersController#show as */*
 Completed 200 OK in 49ms (Views: 36.8ms | ActiveRecord: 10.4ms)
 
 
+Started GET "/users/22" for 127.0.0.1 at 2017-12-28 16:07:32 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (1.5ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 22]]
+[active_model_serializers]   [1m[36mCommunity Load (0.4ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCommunity Load (0.4ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 22]]
+[active_model_serializers]   [1m[36mTask Load (0.9ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 22]]
+[active_model_serializers]   [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (24.11ms)
+Completed 200 OK in 28ms (Views: 20.6ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/users/22" for 127.0.0.1 at 2017-12-28 16:07:35 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (0.7ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 22]]
+[active_model_serializers]   [1m[36mCommunity Load (0.3ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCommunity Load (3.0ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 22]]
+[active_model_serializers]   [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 22]]
+[active_model_serializers]   [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (2.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (33.18ms)
+Completed 200 OK in 38ms (Views: 27.2ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-12-28 16:07:37 -0500
+Started GET "/users/22" for 127.0.0.1 at 2017-12-28 16:07:37 -0500
+Processing by EventsController#index as */*
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mEvent Load (1.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+[active_model_serializers]   [1m[36mCommunity Load (8.5ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (12.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTask Load (1.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."event_id" = $1[0m  [["event_id", 11]]
+[active_model_serializers]   [1m[36mMembership Load (3.1ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 22]]
+[active_model_serializers]   [1m[36mCommunity Load (3.0ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCommunity Load (3.8ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTask Load (2.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."event_id" = $1[0m  [["event_id", 12]]
+[active_model_serializers]   [1m[36mCommunity Load (3.5ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (2.0ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 11]]
+[active_model_serializers]   [1m[36mEvent Load (3.5ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 22]]
+[active_model_serializers]   [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTask Load (1.9ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 22]]
+[active_model_serializers]   [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (2.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (4.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (49.07ms)
+Completed 200 OK in 70ms (Views: 30.2ms | ActiveRecord: 34.9ms)
+
+
+[active_model_serializers]   [1m[36mUser Load (18.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (0.2ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 12]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (82.95ms)
+Completed 200 OK in 93ms (Views: 46.0ms | ActiveRecord: 46.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-12-28 16:08:02 -0500
+Processing by EventsController#index as */*
+Started GET "/users/22" for 127.0.0.1 at 2017-12-28 16:08:02 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mEvent Load (1.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCommunity Load (2.0ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (0.3ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 22]]
+[active_model_serializers]   [1m[36mCommunity Load (0.5ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCommunity Load (0.3ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTask Load (3.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."event_id" = $1[0m  [["event_id", 11]]
+[active_model_serializers]   [1m[36mEvent Load (2.6ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 22]]
+[active_model_serializers]   [1m[36mCommunity Load (0.4ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTask Load (2.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 22]]
+[active_model_serializers]   [1m[36mTask Load (2.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."event_id" = $1[0m  [["event_id", 12]]
+[active_model_serializers]   [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (2.2ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 11]]
+[active_model_serializers]   [1m[36mEvent Load (1.9ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (33.4ms)
+[active_model_serializers]   [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+Completed 200 OK in 42ms (Views: 27.5ms | ActiveRecord: 10.7ms)
+
+
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (0.3ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 12]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (54.54ms)
+Completed 200 OK in 65ms (Views: 44.5ms | ActiveRecord: 19.8ms)
+
+
+Started GET "/communities" for 127.0.0.1 at 2017-12-28 16:08:35 -0500
+Processing by CommunitiesController#index as */*
+Started GET "/users/22" for 127.0.0.1 at 2017-12-28 16:08:35 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCommunity Load (0.6ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+[active_model_serializers]   [1m[36mMembership Load (0.7ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 11]]
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (0.5ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 22]]
+[active_model_serializers]   [1m[36mUser Load (6.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCommunity Load (0.4ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCommunity Load (0.4ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (2.1ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 12]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (2.0ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 22]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (37.13ms)
+[active_model_serializers]   [1m[36mTask Load (1.8ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 22]]
+Completed 200 OK in 46ms (Views: 29.3ms | ActiveRecord: 16.5ms)
+
+
+[active_model_serializers]   [1m[36mEvent Load (4.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (42.46ms)
+Completed 200 OK in 63ms (Views: 35.3ms | ActiveRecord: 14.1ms)
+
+
+  [1m[35m (7.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (7.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (225.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "commun_ity_back_development"[0m
+  [1m[35m (211.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "commun_ity_back_test"[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2744104040621181210)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20171221191351)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (17.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying, "first_name" character varying, "last_name" character varying, "profile_pic" character varying, "password_digest" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (2.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171221191351"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCommunities (20171221191423)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE TABLE "communities" ("id" bigserial primary key, "name" character varying, "description" text, "location" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171221191423"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateEvents (20171221191551)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (12.3ms)[0m  [1m[35mCREATE TABLE "events" ("id" bigserial primary key, "name" character varying, "start_date" timestamp, "end_date" timestamp, "image" character varying, "volunteer_num" integer, "description" text, "location" character varying, "community_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (6.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171221191551"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTasks (20171221191630)
+  [1m[35m (7.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (18.4ms)[0m  [1m[35mCREATE TABLE "tasks" ("id" bigserial primary key, "description" character varying, "completed" boolean, "event_id" integer, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (2.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171221191630"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateMemberships (20171221191848)
+  [1m[35m (6.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (22.1ms)[0m  [1m[35mCREATE TABLE "memberships" ("id" bigserial primary key, "member_type" character varying, "user_id" integer, "community_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171221191848"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-12-28 21:11:14.942732"], ["updated_at", "2017-12-28 21:11:14.942732"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(2744104040621181210)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2744104040621181210)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2744104040621181210)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mCommunity Load (0.7ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mMembership Load (0.7ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships"[0m
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "last_name", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "james@email.com"], ["first_name", "james"], ["last_name", "graham"], ["password_digest", "$2a$10$Gxwew9gyvmAlCIRftc1z5uxZ2tg0gE0TR8dC0gyQuUCuR.Ua3zFEu"], ["created_at", "2017-12-28 21:11:42.542640"], ["updated_at", "2017-12-28 21:11:42.542640"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "last_name", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "ryan@email.com"], ["first_name", "ryan"], ["last_name", "mascolo"], ["password_digest", "$2a$10$Z/U2LQ7IM8NtcAQ59ThBsO0MwqizcZjMKsZNlGRdEAl3UNeikN07G"], ["created_at", "2017-12-28 21:11:42.610789"], ["updated_at", "2017-12-28 21:11:42.610789"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "last_name", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "shirley@email.com"], ["first_name", "shirley"], ["last_name", "lin"], ["password_digest", "$2a$10$fp353mc.8taEEj/lOyxVXuJ3LfgaPDyTZrVVcNVw86p4RuAIkmZa2"], ["created_at", "2017-12-28 21:11:42.680454"], ["updated_at", "2017-12-28 21:11:42.680454"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "last_name", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "matteo@email.com"], ["first_name", "matteo"], ["last_name", "bruni"], ["password_digest", "$2a$10$T0gJCQvLGxiIp0Yjm24aZ.ia9GvXA6sH/kQpGwzuFvMIzb5sw03kG"], ["created_at", "2017-12-28 21:11:42.747976"], ["updated_at", "2017-12-28 21:11:42.747976"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "communities" ("name", "description", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Bowling Club"], ["description", "Every Thursday night, We go bowling"], ["location", "New York, NY"], ["created_at", "2017-12-28 21:11:42.759144"], ["updated_at", "2017-12-28 21:11:42.759144"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "memberships" ("member_type", "user_id", "community_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["member_type", "manager"], ["user_id", 1], ["community_id", 1], ["created_at", "2017-12-28 21:11:42.774709"], ["updated_at", "2017-12-28 21:11:42.774709"]]
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "memberships" ("member_type", "user_id", "community_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["member_type", "member"], ["user_id", 2], ["community_id", 1], ["created_at", "2017-12-28 21:11:42.784882"], ["updated_at", "2017-12-28 21:11:42.784882"]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "memberships" ("member_type", "user_id", "community_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["member_type", "member"], ["user_id", 3], ["community_id", 1], ["created_at", "2017-12-28 21:11:42.794287"], ["updated_at", "2017-12-28 21:11:42.794287"]]
+  [1m[35m (5.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "memberships" ("member_type", "user_id", "community_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["member_type", "member"], ["user_id", 4], ["community_id", 1], ["created_at", "2017-12-28 21:11:42.802398"], ["updated_at", "2017-12-28 21:11:42.802398"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "events" ("name", "start_date", "end_date", "image", "volunteer_num", "description", "location", "community_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name", "Go Bowling"], ["start_date", "2018-01-03 13:30:00"], ["end_date", "2018-01-03 14:30:00"], ["image", "http://www.lincolnbowl.co.uk/wp-content/uploads/2016/02/bggg.jpg"], ["volunteer_num", 3], ["description", "We're all going bowling"], ["location", "61 Wythe Ave, Brooklyn, NY 11249"], ["community_id", 1], ["created_at", "2017-12-28 21:11:42.818644"], ["updated_at", "2017-12-28 21:11:42.818644"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "tasks" ("description", "event_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "go get all the bowling balls"], ["event_id", 1], ["user_id", 3], ["created_at", "2017-12-28 21:11:42.832749"], ["updated_at", "2017-12-28 21:11:42.832749"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("description", "event_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "make sure that all the bowling balls are sparkling"], ["event_id", 1], ["user_id", 2], ["created_at", "2017-12-28 21:11:42.835542"], ["updated_at", "2017-12-28 21:11:42.835542"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "tasks" ("description", "event_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "bring some adult beverages"], ["event_id", 1], ["user_id", 2], ["created_at", "2017-12-28 21:11:42.837810"], ["updated_at", "2017-12-28 21:11:42.837810"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "communities" ("name", "description", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Book Club"], ["description", "Every month, we read a new book and discuss while eating food and drinks"], ["location", "Brooklyn, NY"], ["created_at", "2017-12-28 21:11:42.840277"], ["updated_at", "2017-12-28 21:11:42.840277"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "memberships" ("member_type", "user_id", "community_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["member_type", "manager"], ["user_id", 1], ["community_id", 2], ["created_at", "2017-12-28 21:11:42.842700"], ["updated_at", "2017-12-28 21:11:42.842700"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "events" ("name", "start_date", "end_date", "image", "volunteer_num", "description", "location", "community_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name", "January Meeting: Cat's Cradle"], ["start_date", "2018-01-06 13:30:00"], ["end_date", "2018-01-06 14:30:00"], ["image", "https://upload.wikimedia.org/wikipedia/en/thumb/e/e6/CatsCradle%281963%29.jpg/220px-CatsCradle%281963%29.jpg"], ["volunteer_num", 3], ["description", "This months book is Cat's Craddle by Kurt Vonnegut. We will also be having beer and wings."], ["location", "927 Putnam Ave, Brooklyn, NY 11221"], ["community_id", 2], ["created_at", "2017-12-28 21:11:42.845184"], ["updated_at", "2017-12-28 21:11:42.845184"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "tasks" ("description", "event_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "bring buffalo wings"], ["event_id", 2], ["user_id", 3], ["created_at", "2017-12-28 21:11:42.848512"], ["updated_at", "2017-12-28 21:11:42.848512"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("description", "event_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "bring a 6 pack of Pale Ale"], ["event_id", 2], ["user_id", 2], ["created_at", "2017-12-28 21:11:42.851014"], ["updated_at", "2017-12-28 21:11:42.851014"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "tasks" ("description", "event_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "bring a 6 pack of IPA"], ["event_id", 2], ["user_id", 1], ["created_at", "2017-12-28 21:11:42.853546"], ["updated_at", "2017-12-28 21:11:42.853546"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/communities" for 127.0.0.1 at 2017-12-28 16:13:30 -0500
+Started GET "/users/2" for 127.0.0.1 at 2017-12-28 16:13:31 -0500
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (15.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+Processing by CommunitiesController#index as */*
+  [1m[36mUser Load (31.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCommunity Load (1.4ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (0.5ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 1]]
+[active_model_serializers]   [1m[36mMembership Load (1.0ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCommunity Load (2.1ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (9.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (0.3ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 2]]
+[active_model_serializers]   [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (57.81ms)
+Completed 200 OK in 219ms (Views: 113.3ms | ActiveRecord: 89.3ms)
+
+
+[active_model_serializers]   [1m[36mEvent Load (3.5ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTask Load (2.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mEvent Load (7.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (2.9ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (227.03ms)
+Completed 200 OK in 383ms (Views: 180.3ms | ActiveRecord: 160.0ms)
+
+
+Started GET "/communities/10" for 127.0.0.1 at 2017-12-28 16:13:46 -0500
+Processing by CommunitiesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mCommunity Load (0.5ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+Completed 404 Not Found in 19ms (ActiveRecord: 8.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Community with 'id'=10):
+  
+app/controllers/communities_controller.rb:8:in `show'
+Started GET "/communities" for 127.0.0.1 at 2017-12-28 16:14:34 -0500
+Processing by CommunitiesController#index as */*
+Started GET "/users/2" for 127.0.0.1 at 2017-12-28 16:14:34 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCommunity Load (1.8ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+[active_model_serializers]   [1m[36mMembership Load (0.5ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 1]]
+  [1m[36mUser Load (5.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (5.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (2.4ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCommunity Load (2.8ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (4.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (1.3ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 2]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (31.99ms)
+Completed 200 OK in 42ms (Views: 21.6ms | ActiveRecord: 19.7ms)
+
+
+[active_model_serializers]   [1m[36mEvent Load (4.2ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTask Load (2.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (50.85ms)
+Completed 200 OK in 70ms (Views: 40.4ms | ActiveRecord: 21.1ms)
+
+
+Started GET "/communities" for 127.0.0.1 at 2017-12-28 16:14:38 -0500
+Processing by CommunitiesController#index as */*
+Started GET "/users/2" for 127.0.0.1 at 2017-12-28 16:14:38 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCommunity Load (1.9ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (1.7ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 1]]
+[active_model_serializers]   [1m[36mMembership Load (4.0ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCommunity Load (1.9ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (2.4ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTask Load (1.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (2.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (2.1ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 2]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (28.89ms)
+[active_model_serializers]   [1m[36mEvent Load (2.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 37ms (Views: 20.5ms | ActiveRecord: 16.6ms)
+
+
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (34.0ms)
+Completed 200 OK in 48ms (Views: 28.6ms | ActiveRecord: 18.1ms)
+
+
+Started GET "/communities" for 127.0.0.1 at 2017-12-28 16:15:25 -0500
+Started GET "/users/2" for 127.0.0.1 at 2017-12-28 16:15:25 -0500
+Processing by CommunitiesController#index as */*
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCommunity Load (1.6ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (0.4ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 1]]
+[active_model_serializers]   [1m[36mMembership Load (2.5ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCommunity Load (3.5ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (1.7ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTask Load (1.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mMembership Load (2.1ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 2]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (1.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (22.94ms)
+[active_model_serializers]   [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 31ms (Views: 17.5ms | ActiveRecord: 13.2ms)
+
+
+[active_model_serializers]   [1m[36mEvent Load (4.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (33.58ms)
+Completed 200 OK in 41ms (Views: 20.8ms | ActiveRecord: 17.4ms)
+
+
+Started GET "/communities" for 127.0.0.1 at 2017-12-28 16:15:58 -0500
+Started GET "/users/2" for 127.0.0.1 at 2017-12-28 16:15:58 -0500
+Processing by CommunitiesController#index as */*
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCommunity Load (1.4ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (0.4ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 1]]
+[active_model_serializers]   [1m[36mMembership Load (0.4ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCommunity Load (2.4ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (2.3ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mUser Load (17.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (2.0ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 2]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (55.27ms)
+Completed 200 OK in 62ms (Views: 32.9ms | ActiveRecord: 28.2ms)
+
+
+[active_model_serializers]   [1m[36mEvent Load (8.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (1.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (70.94ms)
+Completed 200 OK in 78ms (Views: 56.6ms | ActiveRecord: 19.5ms)
+
+
+Started GET "/communities" for 127.0.0.1 at 2017-12-28 16:17:02 -0500
+Started GET "/users/2" for 127.0.0.1 at 2017-12-28 16:17:02 -0500
+Processing by CommunitiesController#index as */*
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCommunity Load (0.7ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (0.6ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mCommunity Load (14.8ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (17.5ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 1]]
+[active_model_serializers]   [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (0.6ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 2]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (52.42ms)
+Completed 200 OK in 135ms (Views: 51.2ms | ActiveRecord: 70.9ms)
+
+
+[active_model_serializers]   [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (2.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (296.5ms)
+Completed 200 OK in 351ms (Views: 262.1ms | ActiveRecord: 62.3ms)
+
+
+Started GET "/communities" for 127.0.0.1 at 2017-12-28 16:17:06 -0500
+Started GET "/users/2" for 127.0.0.1 at 2017-12-28 16:17:06 -0500
+Processing by CommunitiesController#index as */*
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCommunity Load (1.9ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (0.4ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 1]]
+[active_model_serializers]   [1m[36mMembership Load (2.6ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCommunity Load (2.0ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (2.5ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTask Load (2.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (2.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (3.8ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 2]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (2.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (31.12ms)
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (34.18ms)
+Completed 200 OK in 44ms (Views: 30.6ms | ActiveRecord: 13.1ms)
+
+
+Completed 200 OK in 43ms (Views: 23.6ms | ActiveRecord: 16.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-12-28 16:17:15 -0500
+Processing by EventsController#index as */*
+Started GET "/users/2" for 127.0.0.1 at 2017-12-28 16:17:15 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCommunity Load (1.1ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTask Load (1.9ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."event_id" = $1[0m  [["event_id", 1]]
+[active_model_serializers]   [1m[36mMembership Load (3.0ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mCommunity Load (1.5ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCommunity Load (2.5ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTask Load (2.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."event_id" = $1[0m  [["event_id", 2]]
+[active_model_serializers]   [1m[36mEvent Load (3.6ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mMembership Load (0.4ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 1]]
+[active_model_serializers]   [1m[36mTask Load (2.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (2.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (1.9ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (35.42ms)
+Completed 200 OK in 54ms (Views: 21.3ms | ActiveRecord: 19.8ms)
+
+
+[active_model_serializers]   [1m[36mUser Load (5.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (0.5ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 2]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (67.68ms)
+Completed 200 OK in 75ms (Views: 51.1ms | ActiveRecord: 23.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-12-28 16:17:43 -0500
+Started GET "/users/2" for 127.0.0.1 at 2017-12-28 16:17:43 -0500
+Processing by EventsController#index as */*
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (14.9ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (1.2ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mCommunity Load (0.6ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (20.9ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTask Load (2.9ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mCommunity Load (6.3ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (2.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTask Load (3.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."event_id" = $1[0m  [["event_id", 1]]
+[active_model_serializers]   [1m[36mCommunity Load (1.9ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (5.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (113.73ms)
+Completed 200 OK in 150ms (Views: 84.1ms | ActiveRecord: 41.9ms)
+
+
+[active_model_serializers]   [1m[36mTask Load (8.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."event_id" = $1[0m  [["event_id", 2]]
+[active_model_serializers]   [1m[36mMembership Load (11.9ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 1]]
+[active_model_serializers]   [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (0.4ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 2]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (118.34ms)
+Completed 200 OK in 230ms (Views: 115.3ms | ActiveRecord: 105.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-12-28 16:19:08 -0500
+Started GET "/users/2" for 127.0.0.1 at 2017-12-28 16:19:08 -0500
+Processing by EventsController#index as */*
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (1.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCommunity Load (2.2ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (4.1ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTask Load (2.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."event_id" = $1[0m  [["event_id", 1]]
+[active_model_serializers]   [1m[36mCommunity Load (2.7ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCommunity Load (2.8ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (2.4ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTask Load (2.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."event_id" = $1[0m  [["event_id", 2]]
+[active_model_serializers]   [1m[36mTask Load (3.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mMembership Load (2.5ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 1]]
+[active_model_serializers]   [1m[36mEvent Load (2.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (5.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (2.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (39.17ms)
+Completed 200 OK in 48ms (Views: 25.6ms | ActiveRecord: 19.4ms)
+
+
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (0.4ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 2]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (58.58ms)
+Completed 200 OK in 66ms (Views: 43.3ms | ActiveRecord: 22.3ms)
+
+
+Started GET "/communities" for 127.0.0.1 at 2017-12-28 16:19:49 -0500
+Processing by CommunitiesController#index as */*
+Started GET "/users/2" for 127.0.0.1 at 2017-12-28 16:19:49 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCommunity Load (2.1ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (0.3ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 1]]
+[active_model_serializers]   [1m[36mMembership Load (2.8ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCommunity Load (3.6ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (2.5ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTask Load (2.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mUser Load (4.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (4.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (0.8ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 2]]
+[active_model_serializers]   [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (35.44ms)
+Completed 200 OK in 48ms (Views: 30.0ms | ActiveRecord: 16.9ms)
+
+
+[active_model_serializers]   [1m[36mEvent Load (7.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (46.69ms)
+Completed 200 OK in 56ms (Views: 25.5ms | ActiveRecord: 25.9ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2017-12-28 16:28:14 -0500
+Started GET "/communities" for 127.0.0.1 at 2017-12-28 16:28:14 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+Processing by CommunitiesController#index as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCommunity Load (2.5ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+[active_model_serializers]   [1m[36mMembership Load (2.2ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mMembership Load (0.3ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 1]]
+[active_model_serializers]   [1m[36mCommunity Load (2.1ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (2.3ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTask Load (2.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (1.9ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (1.9ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (0.3ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 2]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (31.65ms)
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 40ms (Views: 22.6ms | ActiveRecord: 14.8ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (32.89ms)
+Completed 200 OK in 42ms (Views: 29.7ms | ActiveRecord: 11.7ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2017-12-28 16:32:08 -0500
+Started GET "/communities" for 127.0.0.1 at 2017-12-28 16:32:08 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+Processing by CommunitiesController#index as */*
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCommunity Load (1.2ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+[active_model_serializers]   [1m[36mMembership Load (3.2ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mMembership Load (3.0ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 1]]
+[active_model_serializers]   [1m[36mCommunity Load (1.0ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (4.6ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTask Load (4.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (1.9ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (0.4ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 2]]
+[active_model_serializers]   [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (32.73ms)
+[active_model_serializers]   [1m[36mEvent Load (1.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 50ms (Views: 32.9ms | ActiveRecord: 16.3ms)
+
+
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (41.5ms)
+Completed 200 OK in 57ms (Views: 28.8ms | ActiveRecord: 22.4ms)
+
+
+Started GET "/communities" for 127.0.0.1 at 2017-12-28 16:32:29 -0500
+Started GET "/users/2" for 127.0.0.1 at 2017-12-28 16:32:29 -0500
+Processing by CommunitiesController#index as */*
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCommunity Load (0.6ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+[active_model_serializers]   [1m[36mMembership Load (0.6ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 1]]
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (2.1ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mUser Load (4.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (1.3ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 2]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (25.93ms)
+Completed 200 OK in 36ms (Views: 19.7ms | ActiveRecord: 16.0ms)
+
+
+[active_model_serializers]   [1m[36mCommunity Load (13.9ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (1.5ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (2.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (47.89ms)
+Completed 200 OK in 65ms (Views: 28.8ms | ActiveRecord: 25.4ms)
+
+
+Started GET "/communities" for 127.0.0.1 at 2017-12-28 16:32:40 -0500
+Started GET "/users/2" for 127.0.0.1 at 2017-12-28 16:32:40 -0500
+Processing by CommunitiesController#index as */*
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCommunity Load (2.1ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+[active_model_serializers]   [1m[36mMembership Load (0.8ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 1]]
+  [1m[36mUser Load (5.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (3.1ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCommunity Load (6.1ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (2.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTask Load (2.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mMembership Load (0.4ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 2]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (35.85ms)
+Completed 200 OK in 45ms (Views: 26.7ms | ActiveRecord: 17.7ms)
+
+
+[active_model_serializers]   [1m[36mEvent Load (9.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (1.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (48.79ms)
+Completed 200 OK in 64ms (Views: 29.0ms | ActiveRecord: 30.6ms)
+
+
+Started GET "/communities" for 127.0.0.1 at 2017-12-28 16:32:44 -0500
+Started GET "/users/2" for 127.0.0.1 at 2017-12-28 16:32:44 -0500
+Processing by CommunitiesController#index as */*
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCommunity Load (0.8ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+[active_model_serializers]   [1m[36mMembership Load (2.1ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 1]]
+  [1m[36mUser Load (10.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (12.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (2.1ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mUser Load (5.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCommunity Load (2.8ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (2.2ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mMembership Load (3.3ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 2]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (42.79ms)
+Completed 200 OK in 51ms (Views: 21.3ms | ActiveRecord: 29.4ms)
+
+
+[active_model_serializers]   [1m[36mTask Load (9.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (43.75ms)
+Completed 200 OK in 72ms (Views: 39.2ms | ActiveRecord: 29.2ms)
+
+
+Started GET "/communities" for 127.0.0.1 at 2017-12-28 16:32:47 -0500
+Started GET "/users/2" for 127.0.0.1 at 2017-12-28 16:32:47 -0500
+Processing by CommunitiesController#index as */*
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCommunity Load (2.4ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (3.0ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 1]]
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (2.7ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mCommunity Load (1.7ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (8.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (2.8ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTask Load (2.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (2.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (5.1ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 2]]
+[active_model_serializers]   [1m[36mEvent Load (1.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (39.15ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (48.32ms)
+Completed 200 OK in 58ms (Views: 29.2ms | ActiveRecord: 28.4ms)
+
+
+Completed 200 OK in 56ms (Views: 29.0ms | ActiveRecord: 16.7ms)
+
+
+Started GET "/communities" for 127.0.0.1 at 2017-12-28 16:33:05 -0500
+Processing by CommunitiesController#index as */*
+Started GET "/users/2" for 127.0.0.1 at 2017-12-28 16:33:05 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCommunity Load (2.0ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mUser Load (5.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (3.1ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 1]]
+[active_model_serializers]   [1m[36mMembership Load (4.6ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mCommunity Load (0.5ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (5.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (1.6ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (4.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTask Load (7.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (1.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (3.8ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 2]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (38.15ms)
+Completed 200 OK in 51ms (Views: 21.9ms | ActiveRecord: 28.6ms)
+
+
+[active_model_serializers]   [1m[36mEvent Load (8.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (47.77ms)
+Completed 200 OK in 60ms (Views: 25.3ms | ActiveRecord: 32.7ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2017-12-28 16:33:23 -0500
+Started GET "/communities" for 127.0.0.1 at 2017-12-28 16:33:23 -0500
+Processing by UsersController#show as */*
+Processing by CommunitiesController#index as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCommunity Load (1.5ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+[active_model_serializers]   [1m[36mMembership Load (0.3ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 1]]
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (1.7ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCommunity Load (8.7ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (3.2ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 2]]
+[active_model_serializers]   [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (31.43ms)
+Completed 200 OK in 39ms (Views: 24.0ms | ActiveRecord: 14.9ms)
+
+
+[active_model_serializers]   [1m[36mTask Load (4.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (36.34ms)
+Completed 200 OK in 51ms (Views: 22.8ms | ActiveRecord: 19.7ms)
+
+
+Started GET "/communities" for 127.0.0.1 at 2017-12-28 16:33:41 -0500
+Processing by CommunitiesController#index as */*
+Started GET "/users/2" for 127.0.0.1 at 2017-12-28 16:33:41 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCommunity Load (1.6ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (0.4ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 1]]
+[active_model_serializers]   [1m[36mMembership Load (2.9ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCommunity Load (3.7ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (1.9ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTask Load (2.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (1.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (4.1ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 2]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (33.07ms)
+Completed 200 OK in 41ms (Views: 28.9ms | ActiveRecord: 11.9ms)
+
+
+[active_model_serializers]   [1m[36mEvent Load (3.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (40.95ms)
+Completed 200 OK in 49ms (Views: 27.2ms | ActiveRecord: 18.9ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2017-12-28 16:33:49 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (0.3ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mCommunity Load (0.3ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (20.27ms)
+Completed 200 OK in 26ms (Views: 19.7ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2017-12-28 16:34:18 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (0.4ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mCommunity Load (0.5ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (23.19ms)
+Completed 200 OK in 29ms (Views: 22.3ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2017-12-28 16:35:08 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (0.3ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mCommunity Load (0.4ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (21.35ms)
+Completed 200 OK in 28ms (Views: 22.2ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-12-28 16:35:30 -0500
+Processing by EventsController#index as */*
+Started GET "/users/2" for 127.0.0.1 at 2017-12-28 16:35:30 -0500
+Processing by UsersController#show as */*
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCommunity Load (4.1ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTask Load (2.9ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."event_id" = $1[0m  [["event_id", 1]]
+[active_model_serializers]   [1m[36mMembership Load (2.3ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mCommunity Load (0.4ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCommunity Load (2.4ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTask Load (3.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."event_id" = $1[0m  [["event_id", 2]]
+[active_model_serializers]   [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mMembership Load (1.8ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 1]]
+[active_model_serializers]   [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (2.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (39.95ms)
+Completed 200 OK in 52ms (Views: 38.2ms | ActiveRecord: 12.3ms)
+
+
+[active_model_serializers]   [1m[36mUser Load (5.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (0.3ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 2]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (66.25ms)
+Completed 200 OK in 73ms (Views: 47.5ms | ActiveRecord: 25.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-12-28 16:35:36 -0500
+Processing by EventsController#index as */*
+Started GET "/users/2" for 127.0.0.1 at 2017-12-28 16:35:36 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mEvent Load (1.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCommunity Load (1.5ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTask Load (0.8ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."event_id" = $1[0m  [["event_id", 1]]
+[active_model_serializers]   [1m[36mMembership Load (2.2ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mCommunity Load (0.4ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCommunity Load (2.1ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTask Load (3.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."event_id" = $1[0m  [["event_id", 2]]
+[active_model_serializers]   [1m[36mEvent Load (3.6ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mMembership Load (0.5ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 1]]
+[active_model_serializers]   [1m[36mTask Load (2.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (2.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (2.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (37.39ms)
+Completed 200 OK in 49ms (Views: 24.9ms | ActiveRecord: 19.5ms)
+
+
+[active_model_serializers]   [1m[36mUser Load (9.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (0.4ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 2]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (64.09ms)
+Completed 200 OK in 72ms (Views: 48.0ms | ActiveRecord: 23.7ms)
+
+
+Started GET "/communities" for 127.0.0.1 at 2017-12-28 16:35:39 -0500
+Processing by CommunitiesController#index as */*
+Started GET "/users/2" for 127.0.0.1 at 2017-12-28 16:35:39 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCommunity Load (0.5ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (1.3ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 1]]
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (1.9ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCommunity Load (0.4ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mMembership Load (1.6ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 2]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (2.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (25.72ms)
+Completed 200 OK in 35ms (Views: 22.1ms | ActiveRecord: 12.0ms)
+
+
+[active_model_serializers]   [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (8.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (41.7ms)
+Completed 200 OK in 51ms (Views: 29.7ms | ActiveRecord: 16.7ms)
+
+
+Started POST "/memberships" for 127.0.0.1 at 2017-12-28 16:35:42 -0500
+Processing by MembershipsController#create as JSON
+  Parameters: {"membership"=>{"user_id"=>2, "community_id"=>2, "member_type"=>"member"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.4ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "memberships" ("member_type", "user_id", "community_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["member_type", "member"], ["user_id", 2], ["community_id", 2], ["created_at", "2017-12-28 21:35:42.463013"], ["updated_at", "2017-12-28 21:35:42.463013"]]
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (0.3ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mCommunity Load (0.4ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCommunity Load (0.3ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mMembership Load (0.5ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 2]]
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered MembershipSerializer with ActiveModelSerializers::Adapter::Attributes (21.6ms)
+Completed 200 OK in 48ms (Views: 22.9ms | ActiveRecord: 12.0ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2017-12-28 16:35:45 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (0.5ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mCommunity Load (0.3ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCommunity Load (2.0ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (27.5ms)
+Completed 200 OK in 32ms (Views: 24.7ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2017-12-28 16:35:49 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (0.4ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mCommunity Load (1.7ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCommunity Load (0.9ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTask Load (19.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mEvent Load (3.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (1.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (53.44ms)
+Completed 200 OK in 60ms (Views: 27.9ms | ActiveRecord: 28.8ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2017-12-28 16:37:19 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (0.4ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mCommunity Load (1.6ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCommunity Load (10.8ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (35.77ms)
+Completed 200 OK in 43ms (Views: 23.8ms | ActiveRecord: 17.4ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2017-12-28 16:37:58 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (0.3ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mCommunity Load (0.3ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCommunity Load (0.4ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (21.8ms)
+Completed 200 OK in 27ms (Views: 21.1ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2017-12-28 16:38:24 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (0.6ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mCommunity Load (0.8ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCommunity Load (0.4ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTask Load (1.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (26.31ms)
+Completed 200 OK in 30ms (Views: 23.0ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2017-12-28 16:39:08 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (0.3ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mCommunity Load (0.3ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCommunity Load (0.3ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mEvent Load (61.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (1.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (204.68ms)
+Completed 200 OK in 241ms (Views: 98.1ms | ActiveRecord: 119.2ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2017-12-28 16:40:13 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (3.9ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mCommunity Load (0.3ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCommunity Load (0.3ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (4.3ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (4.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (39.04ms)
+Completed 200 OK in 47ms (Views: 28.0ms | ActiveRecord: 16.9ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2017-12-28 16:40:17 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (0.3ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mCommunity Load (0.4ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCommunity Load (0.3ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (21.94ms)
+Completed 200 OK in 30ms (Views: 21.7ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2017-12-28 16:42:03 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (1.6ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mCommunity Load (0.5ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCommunity Load (0.3ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTask Load (1.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (31.83ms)
+Completed 200 OK in 37ms (Views: 29.0ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2017-12-28 16:42:24 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (0.8ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mCommunity Load (0.7ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCommunity Load (0.3ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (26.67ms)
+Completed 200 OK in 33ms (Views: 25.2ms | ActiveRecord: 5.9ms)
+
+
+  [1m[35m (8.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (226.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "commun_ity_back_development"[0m
+  [1m[35m (215.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "commun_ity_back_test"[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2744104040621181210)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20171221191351)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (16.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying, "first_name" character varying, "last_name" character varying, "profile_pic" character varying, "password_digest" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171221191351"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCommunities (20171221191423)
+  [1m[35m (6.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (20.8ms)[0m  [1m[35mCREATE TABLE "communities" ("id" bigserial primary key, "name" character varying, "description" text, "location" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171221191423"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateEvents (20171221191551)
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE "events" ("id" bigserial primary key, "name" character varying, "start_date" timestamp, "end_date" timestamp, "image" character varying, "volunteer_num" integer, "description" text, "location" character varying, "community_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171221191551"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTasks (20171221191630)
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (14.9ms)[0m  [1m[35mCREATE TABLE "tasks" ("id" bigserial primary key, "description" character varying, "completed" boolean DEFAULT 'f', "event_id" integer, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171221191630"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateMemberships (20171221191848)
+  [1m[35m (6.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (17.9ms)[0m  [1m[35mCREATE TABLE "memberships" ("id" bigserial primary key, "member_type" character varying, "user_id" integer, "community_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171221191848"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-12-28 21:48:21.193784"], ["updated_at", "2017-12-28 21:48:21.193784"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(2744104040621181210)[0m
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mCommunity Load (0.6ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
+  [1m[36mMembership Load (0.6ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships"[0m
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "last_name", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "james@email.com"], ["first_name", "james"], ["last_name", "graham"], ["password_digest", "$2a$10$3DP6C7l4WR6mCEYWqfbhruDDHz0hGJDlgmtj3meXJpd8z0NYuarwu"], ["created_at", "2017-12-28 21:49:05.474332"], ["updated_at", "2017-12-28 21:49:05.474332"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "last_name", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "ryan@email.com"], ["first_name", "ryan"], ["last_name", "mascolo"], ["password_digest", "$2a$10$JqhcLQugH77ivXrw9eC4MeZaIg1vtgeTyQInFssKo3r8rWrstCOre"], ["created_at", "2017-12-28 21:49:05.546038"], ["updated_at", "2017-12-28 21:49:05.546038"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "last_name", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "shirley@email.com"], ["first_name", "shirley"], ["last_name", "lin"], ["password_digest", "$2a$10$V3gfjOgM1VmRmbjqY1PANeeXkvVsi3iCnnf4FRgle4bxLOwtUHZEW"], ["created_at", "2017-12-28 21:49:05.611316"], ["updated_at", "2017-12-28 21:49:05.611316"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "last_name", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "matteo@email.com"], ["first_name", "matteo"], ["last_name", "bruni"], ["password_digest", "$2a$10$ReQWrZtmFalbUtR2wL3HYe8uI4IF9pQA7fIKZyvzuL7k.1hqEctxi"], ["created_at", "2017-12-28 21:49:05.679384"], ["updated_at", "2017-12-28 21:49:05.679384"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "communities" ("name", "description", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Bowling Club"], ["description", "Every Thursday night, We go bowling"], ["location", "New York, NY"], ["created_at", "2017-12-28 21:49:05.691311"], ["updated_at", "2017-12-28 21:49:05.691311"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "memberships" ("member_type", "user_id", "community_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["member_type", "manager"], ["user_id", 1], ["community_id", 1], ["created_at", "2017-12-28 21:49:05.706302"], ["updated_at", "2017-12-28 21:49:05.706302"]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "memberships" ("member_type", "user_id", "community_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["member_type", "member"], ["user_id", 2], ["community_id", 1], ["created_at", "2017-12-28 21:49:05.715432"], ["updated_at", "2017-12-28 21:49:05.715432"]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "memberships" ("member_type", "user_id", "community_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["member_type", "member"], ["user_id", 3], ["community_id", 1], ["created_at", "2017-12-28 21:49:05.724744"], ["updated_at", "2017-12-28 21:49:05.724744"]]
+  [1m[35m (5.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "memberships" ("member_type", "user_id", "community_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["member_type", "member"], ["user_id", 4], ["community_id", 1], ["created_at", "2017-12-28 21:49:05.733064"], ["updated_at", "2017-12-28 21:49:05.733064"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "events" ("name", "start_date", "end_date", "image", "volunteer_num", "description", "location", "community_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name", "Go Bowling"], ["start_date", "2018-01-03 13:30:00"], ["end_date", "2018-01-03 14:30:00"], ["image", "http://www.lincolnbowl.co.uk/wp-content/uploads/2016/02/bggg.jpg"], ["volunteer_num", 3], ["description", "We're all going bowling"], ["location", "61 Wythe Ave, Brooklyn, NY 11249"], ["community_id", 1], ["created_at", "2017-12-28 21:49:05.748105"], ["updated_at", "2017-12-28 21:49:05.748105"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "tasks" ("description", "event_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "go get all the bowling balls"], ["event_id", 1], ["user_id", 3], ["created_at", "2017-12-28 21:49:05.760113"], ["updated_at", "2017-12-28 21:49:05.760113"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "tasks" ("description", "event_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "make sure that all the bowling balls are sparkling"], ["event_id", 1], ["user_id", 2], ["created_at", "2017-12-28 21:49:05.763249"], ["updated_at", "2017-12-28 21:49:05.763249"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("description", "event_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "bring some adult beverages"], ["event_id", 1], ["user_id", 2], ["created_at", "2017-12-28 21:49:05.765563"], ["updated_at", "2017-12-28 21:49:05.765563"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "communities" ("name", "description", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Book Club"], ["description", "Every month, we read a new book and discuss while eating food and drinks"], ["location", "Brooklyn, NY"], ["created_at", "2017-12-28 21:49:05.767698"], ["updated_at", "2017-12-28 21:49:05.767698"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "memberships" ("member_type", "user_id", "community_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["member_type", "manager"], ["user_id", 1], ["community_id", 2], ["created_at", "2017-12-28 21:49:05.770088"], ["updated_at", "2017-12-28 21:49:05.770088"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "events" ("name", "start_date", "end_date", "image", "volunteer_num", "description", "location", "community_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name", "January Meeting: Cat's Cradle"], ["start_date", "2018-01-06 13:30:00"], ["end_date", "2018-01-06 14:30:00"], ["image", "https://upload.wikimedia.org/wikipedia/en/thumb/e/e6/CatsCradle%281963%29.jpg/220px-CatsCradle%281963%29.jpg"], ["volunteer_num", 3], ["description", "This months book is Cat's Craddle by Kurt Vonnegut. We will also be having beer and wings."], ["location", "927 Putnam Ave, Brooklyn, NY 11221"], ["community_id", 2], ["created_at", "2017-12-28 21:49:05.772485"], ["updated_at", "2017-12-28 21:49:05.772485"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("description", "event_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "bring buffalo wings"], ["event_id", 2], ["user_id", 3], ["created_at", "2017-12-28 21:49:05.775123"], ["updated_at", "2017-12-28 21:49:05.775123"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "tasks" ("description", "event_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "bring a 6 pack of Pale Ale"], ["event_id", 2], ["user_id", 2], ["created_at", "2017-12-28 21:49:05.777462"], ["updated_at", "2017-12-28 21:49:05.777462"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tasks" ("description", "event_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "bring a 6 pack of IPA"], ["event_id", 2], ["user_id", 1], ["created_at", "2017-12-28 21:49:05.780336"], ["updated_at", "2017-12-28 21:49:05.780336"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTask Load (0.8ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" ORDER BY "tasks"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/users/2" for 127.0.0.1 at 2017-12-28 16:50:43 -0500
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (0.4ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mCommunity Load (0.4ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (171.01ms)
+Completed 200 OK in 240ms (Views: 166.5ms | ActiveRecord: 32.0ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2017-12-28 16:52:34 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (0.6ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mCommunity Load (1.0ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (1.4ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mEvent Load (2.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (1.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (36.28ms)
+Completed 200 OK in 83ms (Views: 31.3ms | ActiveRecord: 20.8ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2017-12-28 16:54:25 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (0.4ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mCommunity Load (1.2ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (28.68ms)
+Completed 200 OK in 37ms (Views: 26.8ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2017-12-28 16:54:50 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (2.2ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mCommunity Load (0.5ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (1.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (25.92ms)
+Completed 200 OK in 31ms (Views: 22.9ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2017-12-28 16:55:03 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (0.6ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mCommunity Load (0.6ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (22.33ms)
+Completed 200 OK in 27ms (Views: 21.3ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2017-12-28 16:55:15 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (0.5ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mCommunity Load (0.5ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (22.0ms)
+Completed 200 OK in 27ms (Views: 20.2ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2017-12-28 17:01:00 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (0.4ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mCommunity Load (0.4ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTask Load (0.9ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (23.79ms)
+Completed 200 OK in 31ms (Views: 22.9ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2017-12-28 17:01:32 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (0.5ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mCommunity Load (0.6ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mEvent Load (2.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (22.66ms)
+Completed 200 OK in 29ms (Views: 19.7ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2017-12-28 17:01:45 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (0.5ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mCommunity Load (0.6ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (21.85ms)
+Completed 200 OK in 26ms (Views: 20.7ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2017-12-28 17:01:49 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (0.6ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mCommunity Load (0.6ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (21.34ms)
+Completed 200 OK in 27ms (Views: 19.8ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-12-28 17:02:08 -0500
+Processing by EventsController#index as */*
+Started GET "/users/2" for 127.0.0.1 at 2017-12-28 17:02:08 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (1.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[36mUser Load (5.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCommunity Load (4.0ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (5.9ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTask Load (1.8ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."event_id" = $1[0m  [["event_id", 1]]
+[active_model_serializers]   [1m[36mCommunity Load (3.1ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCommunity Load (0.3ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (2.8ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."event_id" = $1[0m  [["event_id", 2]]
+[active_model_serializers]   [1m[36mTask Load (4.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (0.4ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 1]]
+[active_model_serializers]   [1m[36mCACHE Event Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mEvent Load (2.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (43.85ms)
+[active_model_serializers]   [1m[36mUser Load (6.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 56ms (Views: 27.4ms | ActiveRecord: 25.9ms)
+
+
+[active_model_serializers]   [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (1.3ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 2]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (69.58ms)
+Completed 200 OK in 80ms (Views: 55.2ms | ActiveRecord: 23.9ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2017-12-28 17:02:50 -0500
+Started GET "/events" for 127.0.0.1 at 2017-12-28 17:02:50 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+Processing by EventsController#index as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (2.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[36mUser Load (4.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCommunity Load (3.5ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (4.9ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mCommunity Load (1.9ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTask Load (8.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."event_id" = $1[0m  [["event_id", 1]]
+[active_model_serializers]   [1m[36mEvent Load (4.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "tasks" ON "events"."id" = "tasks"."event_id" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mCommunity Load (3.4ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mTask Load (3.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   [1m[36mTask Load (3.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."event_id" = $1[0m  [["event_id", 2]]
+[active_model_serializers]   [1m[36mEvent Load (2.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (2.3ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 1]]
+[active_model_serializers]   [1m[36mEvent Load (3.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (60.84ms)
+[active_model_serializers]   [1m[36mUser Load (24.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 78ms (Views: 43.9ms | ActiveRecord: 25.1ms)
+
+
+[active_model_serializers]   [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mMembership Load (0.4ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" WHERE "memberships"."community_id" = $1[0m  [["community_id", 2]]
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (93.36ms)
+Completed 200 OK in 107ms (Views: 55.3ms | ActiveRecord: 51.3ms)
+
+

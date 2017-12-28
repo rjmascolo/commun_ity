@@ -22,7 +22,7 @@ class CommunityBrowseCard extends React.Component {
       <Item.Content>
         <Item.Header as='a'>{community.name}</Item.Header>
         <Item.Meta>
-          <span className='cinema'>Brooklyn, NY (need to add a location value for events)</span>
+          <span className='cinema'>{community.location}</span>
         </Item.Meta>
         <Item.Description>{community.description}</Item.Description>
         <Item.Extra>

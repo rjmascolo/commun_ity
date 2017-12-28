@@ -6,7 +6,16 @@ const TasksTable = ({tasks, tableType}) => {
   const taskDataDash = tableType === "dashboard" && tasks ? (tasks.map( (taskDets, i) => {
     return <TaskTableRows key={i} name={taskDets.name} description={taskDets.description} event={taskDets.event} tableType="dashboard"/>
   })) : null
-  const taskDataPage = tableType !== "dashboard" && tasks ? tasks.map( (taskDets, i) => <TaskTableRows key={i} name={taskDets.name} description={taskDets.description} tableType="event-page"/>) : null
+  const taskDataPage = tableType !== "dashboard" && tasks ? (tasks.map( (taskDets, i) => {
+    return (
+      <TaskTableRows
+        key={i}
+        name={taskDets.name}
+        completed={taskDets.completed}
+        description={taskDets.description}
+        tableType="event-page"/>
+    )}
+  )) : null
 
   return (
   <Table celled padded>

@@ -12,7 +12,7 @@ matteo = User.create({first_name:"matteo", last_name: "bruni", email: "matteo@em
 
 # bowling community
 
-bowling = Community.create({name: "Bowling Club", description: "Every Thursday night, We go bowling"})
+bowling = Community.create({name: "Bowling Club", description: "Every Thursday night, We go bowling", location: "New York, NY"})
 
 Membership.create({member_type: "manager", user: james, community: bowling})
 Membership.create({member_type: "member", user: ryan, community: bowling})
@@ -27,7 +27,7 @@ Task.create({description: "bring some adult beverages", event: go_bowling, user:
 
 # book club
 
-book_club = Community.create({name: "Book Club", description: "Every month, we read a new book and discuss while eating food and drinks"})
+book_club = Community.create({name: "Book Club", description: "Every month, we read a new book and discuss while eating food and drinks", location: "Brooklyn, NY"})
 
 Membership.create({member_type: "manager", user: james, community: book_club})
 

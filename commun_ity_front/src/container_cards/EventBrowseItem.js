@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Icon, Item, Label } from 'semantic-ui-react'
+import { Button, Icon, Item } from 'semantic-ui-react'
 
 const EventsBrowseItem = ({event}) => {
   let href = `/events/${event.id}`
@@ -10,7 +10,7 @@ const EventsBrowseItem = ({event}) => {
       <Item.Content>
         <Item.Header as='a'>{event.name}</Item.Header>
         <Item.Meta>
-          <span className='cinema'>Roco's Bowling Alley(need to add a location value for events)</span>
+          <span className='cinema'>{event.location}</span>
         </Item.Meta>
         <Item.Description>{event.description}</Item.Description>
         <Item.Extra>

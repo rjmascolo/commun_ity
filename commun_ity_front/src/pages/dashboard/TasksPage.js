@@ -9,7 +9,7 @@ class TasksPage extends React.Component{
     <div id="user-home-div" >
       <h1 id="user-home-welcome">Your Tasks</h1>
       <p id="user-home-welcome">Check out your upcoming tasks below.</p>
-      <TasksTable tasks={this.props.tasks} tableType="dashboard" />
+      <TasksTable tasks={this.props.tasks} toggleCompletedTask={this.props.toggleCompletedTask} tableType="dashboard" />
     </div>
     )
   }

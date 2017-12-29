@@ -2,16 +2,18 @@ import React from 'react'
 import { Table } from 'semantic-ui-react'
 import TaskTableRows from '../container_cards/TaskTableRows'
 
-const TasksTable = ({tasks, tableType}) => {
+const TasksTable = ({tasks, tableType, toggleCompletedTask}) => {
   const taskDataDash = tableType === "dashboard" && tasks ? (tasks.map( (taskDets, i) => {
     return (
         <TaskTableRows
               key={i}
+              id={taskDets.id}
               name={taskDets.name}
               description={taskDets.description}
               event={taskDets.event}
               tableType="dashboard"
               completed={taskDets.completed}
+              toggleCompletedTask={toggleCompletedTask}
               />
             )
   })) : null

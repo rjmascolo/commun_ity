@@ -87,11 +87,14 @@ class App extends Component {
       body: JSON.stringify({task: {completed: value}})
       }
     fetch(url,object).then(res => res.json()).then(console.log())
+    let newArray = [...this.state.user.tasks]
+    newArray.find(item => item.id === taskId).completed = value
+    this.setState({user:{tasks: newArray}})
   }
 
 
+
   render() {
-    console.log(this.state)
     return (
       <div className="App">
         <Router>
@@ -113,7 +116,7 @@ class App extends Component {
             {/* Dashboard routes */}
             <Route exact path="/your-calendar" render={() => <CalendarPage events={this.state.user.events} tasks={this.state.user.tasks} user={this.state.user}/>} />
             <Route exact path="/your-events" render={() => <EventsPage events={this.state.user.events} user={this.state.user}/>} />
-            <Route exact path="/your-tasks" render={() => <TasksPage tasks={this.state.user.tasks} user={this.state.user}/>} />
+            <Route exact path="/your-tasks" render={() => <TasksPage tasks={this.state.user.tasks} user={this.state.user} toggleCompletedTask={this.toggleCompletedTask} />} />
             {/* browse routes */}
             <Route exact path="/communities" render={() => <CommunitiesBrowse user={this.state.user} joinCommunity={this.joinCommunity}/>} />
             <Route exact path="/events" render={() => <EventsBrowse user={this.state.user} addEvent={this.joinCommunity} />} />

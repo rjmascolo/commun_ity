@@ -13,7 +13,6 @@ import EventsBrowse from './pages/browse/EventsBrowse'
 import Event from './pages/individual_pages/Event'
 import Community from './pages/individual_pages/Community'
 
-//let URL = "http://localhost:3000/users/7";
 const token = localStorage.getItem("token");
 
 class App extends Component {
@@ -92,6 +91,7 @@ class App extends Component {
 
 
   render() {
+    console.log(this.state)
     return (
       <div className="App">
         <Router>

@@ -1,18 +1,22 @@
-import React from 'react'
-import TasksTable from '../../containers/TasksTable'
+import React from "react";
+import TasksTable from "../../containers/TasksTable";
 
-
-class TasksPage extends React.Component{
-
-  render(){
-    return(
-    <div id="user-home-div" >
-      <h1 id="user-home-welcome">Your Tasks</h1>
-      <p id="user-home-welcome">Check out your upcoming tasks below.</p>
-      <TasksTable tasks={this.props.tasks}/>
-    </div>
-    )
+class TasksPage extends React.Component {
+  componentDidMount() {
+    const token = localStorage.getItem("token");
+    if (token) {
+      this.props.history.push("/login");
+    }
+  }
+  render() {
+    return (
+      <div id="user-home-div">
+        <h1 id="user-home-welcome">Your Tasks</h1>
+        <p id="user-home-welcome">Check out your upcoming tasks below.</p>
+        <TasksTable tasks={this.props.tasks} />
+      </div>
+    );
   }
 }
 
-export default TasksPage
+export default TasksPage;

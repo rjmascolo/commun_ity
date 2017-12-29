@@ -20,8 +20,11 @@ class TasksController < ApplicationController
 
   def update
     task = Task.find(params[:id])
-    byebug
-    task.update(task_params)
+    if task.update(task_params)
+      render json: task
+    else
+      render json: {errors: task.errors}
+    end
   end
 
   def destroy

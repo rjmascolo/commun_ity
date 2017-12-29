@@ -2,11 +2,18 @@ import React, { Component } from 'react'
 import { Menu } from 'semantic-ui-react'
 
 export default class SidebarLeft extends Component {
-  handleItemClick = name => this.setState({ activeItem: name })
+  handleItemClick = name => {
+    this.setState({ activeItem: name });
+  };
+
+  //this is not working, never hits handleLogOut
+  handleLogOut = () => {
+    localStorage.removeItem("token");
+  };
 
   render() {
-    const { activeItem } = this.state || {}
-
+    const { activeItem } = this.state || {};
+    const loggedIn = !!localStorage.token;
     return (
       <Menu vertical idname="sidebar">
         <Menu.Item>
@@ -32,11 +39,25 @@ export default class SidebarLeft extends Component {
           <Menu.Header>Settings</Menu.Header>
 
           <Menu.Menu>
-            <Menu.Item name='Log Out' active={activeItem === 'rails'} onClick={this.handleItemClick} />
+            {loggedIn ? (
+                <Menu.Item
+                  href="/login"
+                  name="Log Out"
+                  active={activeItem === "rails"}
+                  onClick={() => {
+                    this.handleLogOut;
+                  }}
+                />
+            ) : (
+                <Menu.Item
+                  name="Log In"
+                  active={activeItem === "rails"}
+                  onClick={this.handleItemClick}
+                />
+            )}
           </Menu.Menu>
         </Menu.Item>
-
       </Menu>
-    )
+    );
   }
 }

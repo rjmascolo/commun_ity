@@ -44,4 +44,4 @@ const TasksTable = ({tasks, tableType}) => {
  )
 }
 
-export default TasksTable
+export default TasksTable;

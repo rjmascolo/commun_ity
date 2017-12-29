@@ -1,5 +1,5 @@
-import React from 'react'
-import TasksTable from '../../containers/TasksTable'
+import React from "react";
+import TasksTable from "../../containers/TasksTable";
 
 
 class TasksPage extends React.Component{
@@ -15,4 +15,4 @@ class TasksPage extends React.Component{
   }
 }
 
-export default TasksPage
+export default TasksPage;

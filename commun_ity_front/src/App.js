@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 // pages
-import SidebarLeft  from './Sidebar'
+import SidebarLeft from "./Sidebar";
 import CalendarPage from "./pages/dashboard/CalendarPage";
 import LogIn from "./pages/LogIn";
 import EventsPage from "./pages/dashboard/EventsPage";
@@ -13,39 +13,55 @@ import EventsBrowse from './pages/browse/EventsBrowse'
 import Event from './pages/individual_pages/Event'
 import Community from './pages/individual_pages/Community'
 
-
-let URL = "http://localhost:3000/users/2"
+//let URL = "http://localhost:3000/users/7";
+const token = localStorage.getItem("token");
 
 class App extends Component {
   state = {
-    events:[],
-    communities:[],
-    user_type: "",
+    events: [],
+    communities: [],
     user: {
       id: null,
-      first_name: '',
-      last_name:'',
-      communities:[],
+      firstName: '',
+      lastName:'',
+      managingCommunities:[],
+      memberOf:[],
       tasks:[],
       events:[]
     }
-  }
+  };
 
-  componentDidMount(){
-    fetch(URL).then(res => res.json()).then(userData => {
-      this.setState(
-        {
-          user: {
-            id: userData.id,
-            first_name: userData.first_name,
-            last_name: userData.last_name,
-            tasks: userData.tasks,
-            events: userData.user_events,
-            communities: userData.member_of,
-          }
-        }
-      )
+  handleLogIn = user => {
+    const newUser = {
+      id: user.id,
+      first_name: user.first_name,
+      last_name: user.last_name,
+      managingCommunities: user.managing_communities,
+      memberOf: user.member_of,
+      tasks: user.tasks,
+      events: user.events
+    };
+    this.setState({
+      user: newUser
+    });
+  };
+
+  getCurrentUser = () => {
+    fetch("http://localhost:3000/current_user", {
+      headers: {
+        "Content-Type": "application/json",
+        Accepts: "application/json",
+        Authorization: token
+      }
     })
+      .then(res => res.json())
+      .then(user => this.handleLogIn(user));
+  };
+
+  componentDidMount() {
+    if (token) {
+      this.getCurrentUser();
+    }
   }
 
   joinCommunity = (user, community) => {
@@ -76,18 +92,23 @@ class App extends Component {
 
 
   render() {
-    console.log()
     return (
       <div className="App">
         <Router>
           <div>
             <div id="sidebar">
-              <SidebarLeft />
+              <SidebarLeft handleLogOut={this.handleLogOut} />
             </div>
             <Route
               exact
               path="/login"
-              render={() => <LogIn getUser={this.getUser} />}
+              render={routerProps => (
+                <LogIn
+                  {...routerProps}
+                  handleLogIn={this.handleLogIn}
+                  error={this.state.error}
+                />
+              )}
             />
             {/* Dashboard routes */}
             <Route exact path="/your-calendar" render={() => <CalendarPage events={this.state.user.events} tasks={this.state.user.tasks} user={this.state.user}/>} />

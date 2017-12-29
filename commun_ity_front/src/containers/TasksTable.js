@@ -4,7 +4,16 @@ import TaskTableRows from '../container_cards/TaskTableRows'
 
 const TasksTable = ({tasks, tableType}) => {
   const taskDataDash = tableType === "dashboard" && tasks ? (tasks.map( (taskDets, i) => {
-    return <TaskTableRows key={i} name={taskDets.name} description={taskDets.description} event={taskDets.event} tableType="dashboard"/>
+    return (
+        <TaskTableRows
+              key={i}
+              name={taskDets.name}
+              description={taskDets.description}
+              event={taskDets.event}
+              tableType="dashboard"
+              completed={taskDets.completed}
+              />
+            )
   })) : null
   const taskDataPage = tableType !== "dashboard" && tasks ? (tasks.map( (taskDets, i) => {
     return (

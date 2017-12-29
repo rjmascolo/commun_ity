@@ -13,19 +13,23 @@ class TasksController < ApplicationController
     task = Task.new(task_params)
     if task.save
       render json: "Community Created"
-    else 
+    else
       render json: {errors: task.errors}
     end
   end
 
   def update
+    task = Task.find(params[:id])
+    byebug
+    task.update(task_params)
   end
 
   def destroy
   end
 
   private
+
   def task_params
-    params.require(:task).permit(:name, :description, :event_id, :user_id)
+    params.require(:task).permit(:name, :description, :event_id, :user_id, :completed)
   end
 end

@@ -61,6 +61,20 @@ class App extends Component {
     fetch(url,object).then(res => res.json()).then(console.log())
   }
 
+  toggleCompletedTask = (taskId, value) => {
+    let url = `http://localhost:3000/tasks/${taskId}`
+    let object = {
+      method: 'PATCH',
+      headers: {
+        'accept': 'application/json',
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify({task: {completed: value}})
+      }
+    fetch(url,object).then(res => res.json()).then(console.log())
+  }
+
+
   render() {
     console.log()
     return (

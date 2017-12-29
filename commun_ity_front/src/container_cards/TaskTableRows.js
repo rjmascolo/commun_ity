@@ -2,10 +2,7 @@ import React from 'react'
 import { Table, Checkbox } from 'semantic-ui-react'
 
 class TaskTableRows extends React.Component {
-  
-  componentWillUnmount() {
-    console.log("data")
-  }
+
   render() {
     return (
         <Table.Row>

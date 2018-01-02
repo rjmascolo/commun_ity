@@ -16,7 +16,11 @@ class EventsBrowse extends React.Component{
   }
 
   render(){
-    const eventDets = this.state.events.map((event, id) => <EventsBrowserItem event={event} key={id}/> )
+    const usersEvents = this.props.user.tasks.map(task => task.event.id)
+    const eventDets = this.state.events.map((event, id) => <EventsBrowserItem event={event} key={id} goingToEvent={this.props.goingToEvent} user_id={this.props.user.id} isGoing={usersEvents.includes(event.id)} /> )
+
+    console.log(usersEvents)
+
     return(
     <div id="user-home-div" >
       <h1 id="user-home-welcome">Events In Your Communities</h1>

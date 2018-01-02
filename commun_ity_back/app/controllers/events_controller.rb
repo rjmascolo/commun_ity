@@ -13,7 +13,7 @@ class EventsController < ApplicationController
     event = Event.new(event_params)
     if event.save
       render json: "Community Created"
-    else 
+    else
       render json: {errors: event.errors}
     end
   end
@@ -26,6 +26,6 @@ class EventsController < ApplicationController
 
   private
   def event_params
-    params.require(:event).permit(:name, :date, :image, :volunteer_num, :description, :community_id)
+    params.require(:event).permit(:name, :start_date, :end_date, :image, :volunteer_num, :description, :community_id, :location)
   end
 end

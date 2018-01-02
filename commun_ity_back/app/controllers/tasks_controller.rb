@@ -12,7 +12,7 @@ class TasksController < ApplicationController
   def create
     task = Task.new(task_params)
     if task.save
-      render json: "Community Created"
+      render json: task
     else
       render json: {errors: task.errors}
     end

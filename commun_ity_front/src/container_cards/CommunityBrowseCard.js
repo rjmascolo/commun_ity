@@ -26,13 +26,13 @@ class CommunityBrowseCard extends React.Component {
         </Item.Meta>
         <Item.Description>{community.description}</Item.Description>
         <Item.Extra>
-          {this.state.notJoined && !this.props.alreadyJoined ?
+          {this.state.notJoined && !(this.props.alreadyJoined || this.props.isManager) ?
             (<Button primary floated='right' onClick={this.handleClick}>
             Join Community
             <Icon name='right chevron' />
           </Button>) :
           (<Button primary basic floated='right'>
-          You're a member!
+          {this.props.isManager ? "You're a manager" : "You're a member!"}
         </Button>)
          }
           <Label><Icon name='group' /> {members} People Belong</Label>

@@ -14,13 +14,43 @@ class CommunitiesBrowse extends React.Component{
   }
 
   render(){
-    const communitiesDets = this.state.communities ? this.state.communities.map(community => {
+
+    const managedCommunitiesDets = this.state.communities ? this.props.user.managingCommunities.map(community => {
       return (
         <CommunityBrowseCard
             community={community}
             joinCommunity={this.props.joinCommunity}
             userId={this.props.user.id}
-            alreadyJoined={this.props.user.communities.map(community => community.id).includes(community.id)}
+            alreadyJoined={true}
+            isManager={true}
+          />) } )
+      : null
+    const memberOfCommunitiesDets = this.state.communities ? this.props.user.memberOf.map(community => {
+      return (
+        <CommunityBrowseCard
+            community={community}
+            joinCommunity={this.props.joinCommunity}
+            userId={this.props.user.id}
+            alreadyJoined={true}
+            isManager={false}
+          />) } )
+      : null
+
+
+    const filteredCommunities = this.state.communities ? this.state.communities.filter( community => {
+      let userManagingCommunitiesId = this.props.user.managingCommunities.map(community => community.id)
+      let userMemberOfId = this.props.user.memberOf.map(community => community.id)
+      return !(userManagingCommunitiesId.includes(community.id) || userMemberOfId.includes(community.id) )
+    }) : null
+
+    const communitiesDets = this.state.communities ? filteredCommunities.map(community => {
+      return (
+        <CommunityBrowseCard
+            community={community}
+            joinCommunity={this.props.joinCommunity}
+            userId={this.props.user.id}
+            alreadyJoined={this.props.user.memberOf.map(community => community.id).includes(community.id)}
+            isManager={this.props.user.managingCommunities.map(community => community.id).includes(community.id)}
           />) } )
       : null
 
@@ -30,6 +60,15 @@ class CommunitiesBrowse extends React.Component{
       <p id="user-home-welcome">Take a look through the communities in your area</p>
       <br/>
       <div id="browse-event-card-container">
+        <h1>You manage</h1>
+        <Item.Group divided>
+          {managedCommunitiesDets}
+        </Item.Group>
+        <h1>You Belong To</h1>
+        <Item.Group divided>
+          {memberOfCommunitiesDets}
+        </Item.Group>
+        <h1>Communities You Can Join</h1>
         <Item.Group divided>
           {communitiesDets}
         </Item.Group>

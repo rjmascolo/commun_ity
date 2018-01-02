@@ -121,8 +121,8 @@ class App extends Component {
             <Route exact path="/communities" render={() => <CommunitiesBrowse user={this.state.user} joinCommunity={this.joinCommunity}/>} />
             <Route exact path="/events" render={() => <EventsBrowse user={this.state.user} addEvent={this.joinCommunity} />} />
             {/* individual pages routes */}
-            <Route path="/events/:id" render={(args) => <Event id={args.match.params.id} /> } />
-            <Route path="/community/:id" render={(args) => <Community id={args.match.params.id} />} />
+            <Route path="/events/:id" render={(args) => <Event id={args.match.params.id} user={this.state.user}/> } />
+            <Route path="/community/:id" render={(args) => <Community id={args.match.params.id} user={this.state.user}/>} />
           </div>
         </Router>
       </div>

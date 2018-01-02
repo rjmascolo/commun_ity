@@ -7,7 +7,7 @@ class User < ApplicationRecord
 
   def managing_communities
     managers = self.memberships.select { |membership| membership['member_type'] == 'manager'}
-    managers.map {|manager| manager.community.slice(:name, :description, :id)}
+    managers.map {|manager| CommunitySerializer.new(manager.community)}
   end
 
   def user_events
@@ -16,7 +16,7 @@ class User < ApplicationRecord
 
   def member_of
     members = self.memberships.select { |membership| membership['member_type'] == 'member'}
-    members.map {|member| member.community.slice(:name, :description, :id)}
+    members.map {|member| CommunitySerializer.new(member.community)}
   end
 
 end

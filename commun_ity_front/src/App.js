@@ -136,6 +136,22 @@ goingToEvent = (user_id, event_id) => {
   }))
 }
 
+createTask = (description, event_id) => {
+  let url = "http://localhost:3000/tasks"
+  let object = {
+    method: 'post',
+    headers: {
+      'accept': 'application/json',
+      'content-type': 'application/json'
+    },
+    body: JSON.stringify({task: {
+      description: description,
+      event_id: event_id
+      }})
+    }
+  return fetch(url,object).then( res => res.json())
+}
+
   render() {
     return (
       <div className="App">
@@ -163,7 +179,7 @@ goingToEvent = (user_id, event_id) => {
             <Route exact path="/communities" render={() => <CommunitiesBrowse user={this.state.user} joinCommunity={this.joinCommunity}/>} />
             <Route exact path="/events" render={() => <EventsBrowse user={this.state.user} goingToEvent={this.goingToEvent} />} />
             {/* individual pages routes */}
-            <Route path="/events/:id" render={(args) => <Event id={args.match.params.id} user={this.state.user} goingToEvent={this.goingToEvent}/> } />
+            <Route path="/events/:id" render={(args) => <Event id={args.match.params.id} user={this.state.user} goingToEvent={this.goingToEvent} createTask={this.createTask} /> } />
             <Route path="/community/:id" render={(args) => <Community id={args.match.params.id} user={this.state.user} createEvent={this.createEvent} />} />
           </div>
         </Router>

@@ -24,7 +24,8 @@ class Event extends React.Component{
   }
 
   render(){
-
+    const isManager = this.state.event.community ? this.props.user.managingCommunities.map(community => community.id).includes(parseInt(this.state.event.community.id)) : null
+    console.log(isManager)
     return(
         <div id="event-div">
           <Image src={this.state.event.image} size='medium' circular id="event-image" />
@@ -37,8 +38,8 @@ class Event extends React.Component{
             </Header.Subheader>
           </Header>
           <h4>Members Going</h4>
-          <TasksTable tasks={this.state.event.tasks}/>
-          <TaskForm createTask={this.props.createTask} event_id={this.state.event.id} addTask= {this.addTask} />
+          <TasksTable tasks={this.state.event.tasks} volunteer={this.props.volunteer} user={this.props.user} getTaskUser={this.getTaskUser}/>
+          {isManager ? <TaskForm createTask={this.props.createTask} event_id={this.state.event.id} addTask= {this.addTask} /> : null }
       </div>
     )
   }

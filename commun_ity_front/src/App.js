@@ -17,8 +17,6 @@ const token = localStorage.getItem("token");
 
 class App extends Component {
   state = {
-    events: [],
-    communities: [],
     user: {
       id: null,
       firstName: '',
@@ -152,6 +150,22 @@ createTask = (description, event_id) => {
   return fetch(url,object).then( res => res.json())
 }
 
+volunteer = (userId, taskId) => {
+  let url = `http://localhost:3000/tasks/${taskId}`
+  let object = {
+    method: 'PATCH',
+    headers: {
+      'accept': 'application/json',
+      'content-type': 'application/json'
+    },
+    body: JSON.stringify({task: {user_id: userId}})
+    }
+  fetch(url,object).then(res => res.json())
+  // let newArray = [...this.state.user.tasks]
+  // newArray.find(item => item.id === taskId).completed = value
+  // this.setState({user:{tasks: newArray}})
+}
+
   render() {
     return (
       <div className="App">
@@ -179,7 +193,7 @@ createTask = (description, event_id) => {
             <Route exact path="/communities" render={() => <CommunitiesBrowse user={this.state.user} joinCommunity={this.joinCommunity}/>} />
             <Route exact path="/events" render={() => <EventsBrowse user={this.state.user} goingToEvent={this.goingToEvent} />} />
             {/* individual pages routes */}
-            <Route path="/events/:id" render={(args) => <Event id={args.match.params.id} user={this.state.user} goingToEvent={this.goingToEvent} createTask={this.createTask} /> } />
+            <Route path="/events/:id" render={(args) => <Event id={args.match.params.id} user={this.state.user} goingToEvent={this.goingToEvent} createTask={this.createTask} volunteer={this.volunteer} /> } />
             <Route path="/community/:id" render={(args) => <Community id={args.match.params.id} user={this.state.user} createEvent={this.createEvent} />} />
           </div>
         </Router>

@@ -16,18 +16,18 @@ class EventsBrowse extends React.Component {
   }
 
   render() {
-    const usersEvents = this.props.user.tasks.map(task => task.event);
-    const eventDets = this.state.events.map((event, id) => (
-      <EventsBrowserItem
-        event={event}
-        key={id}
-        goingToEvent={this.props.goingToEvent}
-        user_id={this.props.user.id}
-        isGoing={usersEvents.includes(event.id)}
-      />
-    ));
-
-    console.log(usersEvents);
+    const usersEvents = this.props.user.tasks.map(task => task.event.id);
+    const eventDets = this.state.events.map((event, id) => {
+      return (
+        <EventsBrowserItem
+          event={event}
+          key={id}
+          goingToEvent={this.props.goingToEvent}
+          user_id={this.props.user.id}
+          isGoing={usersEvents.includes(event.id)}
+        />
+      );
+    });
 
     return (
       <div id="user-home-div">

@@ -24,7 +24,8 @@ class App extends Component {
       managingCommunities: [],
       memberOf: [],
       tasks: [],
-      events: []
+      events: [],
+      uniqueEventTasks: []
     }
   };
 
@@ -36,7 +37,8 @@ class App extends Component {
       managingCommunities: user.managing_communities,
       memberOf: user.member_of,
       tasks: user.tasks,
-      events: user.events
+      events: user.events,
+      uniqueEventTasks: user.unique_tasks_by_event
     };
     this.setState({
       user: newUser
@@ -187,12 +189,6 @@ class App extends Component {
 
   render() {
     const token = localStorage.getItem("token");
-    const userEvents = this.state.user.tasks
-      .filter(task => {
-        return task.description !== "RSVP";
-      })
-      .map(task => task.event);
-    console.log(userEvents);
     return (
       <div className="App">
         <Router>
@@ -244,7 +240,7 @@ class App extends Component {
               render={() => {
                 return token ? (
                   <EventsPage
-                    events={this.state.user.events}
+                    events={this.state.user.uniqueEventTasks}
                     user={this.state.user}
                   />
                 ) : (

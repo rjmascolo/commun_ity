@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_secure_password
 
   def managing_communities
-    managers = self.memberships.select { |membership| membership['member_type'] == 'manager'}
+    managers = self.memberships.where(member_type: 'manager')
     managers.map {|manager| CommunitySerializer.new(manager.community)}
   end
 
@@ -14,8 +14,13 @@ class User < ApplicationRecord
     self.events.uniq
   end
 
+  def unique_tasks_by_event
+    tasks = self.tasks.all.uniq { |task| task.event_id }
+    tasks.map {|task| EventSerializer.new(task.event) }
+  end
+
   def member_of
-    members = self.memberships.select { |membership| membership['member_type'] == 'member'}
+    members = self.memberships.where(member_type: 'member')
     members.map {|member| CommunitySerializer.new(member.community)}
   end
 

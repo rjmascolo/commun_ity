@@ -55,7 +55,7 @@ class EventsBrowseItem extends React.Component {
                   basic: true,
                   color: "blue",
                   pointing: "left",
-                  content: `x People Going`
+                  content: `${this.props.event.tasks.length} People Going`
                 }}
                 onClick={() => {
                   this.props.goingToEvent(

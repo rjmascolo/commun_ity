@@ -1,35 +1,47 @@
-import React from 'react'
-import {Item} from 'semantic-ui-react'
-import EventsBrowserItem from '../../container_cards/EventBrowseItem'
+import React from "react";
+import { Item } from "semantic-ui-react";
+import EventsBrowserItem from "../../container_cards/EventBrowseItem";
 
+let URL = "http://localhost:3000/events";
 
-let URL = "http://localhost:3000/events"
-
-class EventsBrowse extends React.Component{
-
+class EventsBrowse extends React.Component {
   state = {
-    events:[]
+    events: []
+  };
+
+  componentDidMount() {
+    fetch(URL)
+      .then(res => res.json())
+      .then(events => this.setState({ events: events }));
   }
 
-  componentDidMount(){
-    fetch(URL).then(res => res.json()).then( events => this.setState({events: events}))
-  }
+  render() {
+    const usersEvents = this.props.user.tasks.map(task => task.event);
+    const eventDets = this.state.events.map((event, id) => (
+      <EventsBrowserItem
+        event={event}
+        key={id}
+        goingToEvent={this.props.goingToEvent}
+        user_id={this.props.user.id}
+        isGoing={usersEvents.includes(event.id)}
+      />
+    ));
 
-  render(){
-    const eventDets = this.state.events.map((event, id) => <EventsBrowserItem event={event} key={id}/> )
-    return(
-    <div id="user-home-div" >
-      <h1 id="user-home-welcome">Events In Your Communities</h1>
-      <p id="user-home-welcome">Check out your upcoming events in your communities below.</p>
-      <br/>
-      <div id="browse-event-card-container">
-        <Item.Group divided>
-          {eventDets}
-        </Item.Group>
+    console.log(usersEvents);
+
+    return (
+      <div id="user-home-div">
+        <h1 id="user-home-welcome">Events In Your Communities</h1>
+        <p id="user-home-welcome">
+          Check out your upcoming events in your communities below.
+        </p>
+        <br />
+        <div id="browse-event-card-container">
+          <Item.Group divided>{eventDets}</Item.Group>
+        </div>
       </div>
-    </div>
-    )
+    );
   }
 }
 
-export default EventsBrowse
+export default EventsBrowse;

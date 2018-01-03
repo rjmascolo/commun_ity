@@ -29,7 +29,7 @@ class LogIn extends Component {
         } else {
           localStorage.setItem("token", userData.token);
           this.props.handleLogIn(userData.user);
-          this.props.history.push("/your-calendar");
+          this.props.history.push("/your-events");
         }
       });
   };

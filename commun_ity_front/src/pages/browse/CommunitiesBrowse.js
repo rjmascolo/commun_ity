@@ -18,6 +18,7 @@ class CommunitiesBrowse extends React.Component{
     const managedCommunitiesDets = this.state.communities ? this.props.user.managingCommunities.map(community => {
       return (
         <CommunityBrowseCard
+            id={community.id}
             community={community}
             joinCommunity={this.props.joinCommunity}
             userId={this.props.user.id}
@@ -28,6 +29,7 @@ class CommunitiesBrowse extends React.Component{
     const memberOfCommunitiesDets = this.state.communities ? this.props.user.memberOf.map(community => {
       return (
         <CommunityBrowseCard
+            id={community.id}
             community={community}
             joinCommunity={this.props.joinCommunity}
             userId={this.props.user.id}
@@ -46,6 +48,7 @@ class CommunitiesBrowse extends React.Component{
     const communitiesDets = this.state.communities ? filteredCommunities.map(community => {
       return (
         <CommunityBrowseCard
+            id={community.id}
             community={community}
             joinCommunity={this.props.joinCommunity}
             userId={this.props.user.id}

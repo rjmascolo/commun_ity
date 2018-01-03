@@ -1,7 +1,7 @@
 import React from 'react'
 import { Card, Icon, Image } from 'semantic-ui-react'
 
-const EventCard = ({name, date, image}) => (
+const EventCard = ({name, date, image, going}) => (
   <Card>
     <Image src={image} />
     <Card.Content>
@@ -17,7 +17,7 @@ const EventCard = ({name, date, image}) => (
     <Card.Content extra>
       <a>
         <Icon name='user' />
-        x People Going
+        {going} People Going
       </a>
     </Card.Content>
   </Card>

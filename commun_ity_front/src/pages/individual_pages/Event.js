@@ -31,7 +31,8 @@ class Event extends React.Component{
     // const communityManagers = this.state.event.tasks ? (this.state.community.managers.map ((member, i ) => <MemberCard member={member} isManager={true} key={i} /> )) : null
 
     return(
-        <div id="event-div">
+        <div id="individual-page">
+          <div id="header">
           <Image src={this.state.event.image} size='medium' circular id="event-image" />
           <Header as='h2' icon textAlign='center'>
             <Header.Content>
@@ -41,12 +42,18 @@ class Event extends React.Component{
               {this.state.event.description}
             </Header.Subheader>
           </Header>
-          <List>
-            <h4>Members Going</h4>
+        </div>
+        <div id="body">
+          <List id="members-list">
+            <h2>Members Going</h2>
             {eventParticipants}
           </List>
-          <TasksTable tasks={this.state.event.tasks} volunteer={this.props.volunteer} user={this.props.user} getTaskUser={this.getTaskUser}/>
-          {isManager ? <TaskForm createTask={this.props.createTask} event_id={this.state.event.id} addTask= {this.addTask} /> : null }
+          <div id="task-table-width">
+            <h3 id="event-header" >Tasks Needed</h3>
+            <TasksTable tasks={this.state.event.tasks} volunteer={this.props.volunteer} user={this.props.user} getTaskUser={this.getTaskUser}/>
+            {isManager ? <TaskForm createTask={this.props.createTask} event_id={this.state.event.id} addTask= {this.addTask} /> : null }
+          </div>
+        </div>
       </div>
     )
   }

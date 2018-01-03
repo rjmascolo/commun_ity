@@ -2,8 +2,9 @@ import React from 'react'
 // import UserCard from '../../container_cards/UserCard'
 import TasksTable from '../../containers/TasksTable'
 import TaskForm from '../../forms/TaskForm'
+import MemberCard from '../../container_cards/memberCard'
 
-import { Header, Image } from 'semantic-ui-react'
+import { Header, Image, List } from 'semantic-ui-react'
 
 
 class Event extends React.Component{
@@ -25,7 +26,10 @@ class Event extends React.Component{
 
   render(){
     const isManager = this.state.event.community ? this.props.user.managingCommunities.map(community => community.id).includes(parseInt(this.state.event.community.id)) : null
-    console.log(isManager)
+
+    const eventParticipants = this.state.event.tasks ? (this.state.event.tasks.filter(task => task.user).map ((task, i ) =>  <MemberCard member={task.user} isManager={false} key={i} /> )) : null
+    // const communityManagers = this.state.event.tasks ? (this.state.community.managers.map ((member, i ) => <MemberCard member={member} isManager={true} key={i} /> )) : null
+
     return(
         <div id="event-div">
           <Image src={this.state.event.image} size='medium' circular id="event-image" />
@@ -37,7 +41,10 @@ class Event extends React.Component{
               {this.state.event.description}
             </Header.Subheader>
           </Header>
-          <h4>Members Going</h4>
+          <List>
+            <h4>Members Going</h4>
+            {eventParticipants}
+          </List>
           <TasksTable tasks={this.state.event.tasks} volunteer={this.props.volunteer} user={this.props.user} getTaskUser={this.getTaskUser}/>
           {isManager ? <TaskForm createTask={this.props.createTask} event_id={this.state.event.id} addTask= {this.addTask} /> : null }
       </div>

@@ -14,12 +14,14 @@ class CommunityBrowseCard extends React.Component {
   render() {
     const community = this.props.community;
     const members = community.members.length;
+    const linkURL = `/community/${community.id}`;
+    console.log(community);
     return (
-      <Item href={`/community/${this.props.id}`}>
-        <Item.Image src="http://cdn2us.denofgeek.com/sites/denofgeekus/files/kinopoisk-ru-big-lebowski_2c-the-588419.jpg" />
+      <Item>
+        <Item.Image src={community.image_url} />
 
         <Item.Content>
-          <Item.Header as="a" href={`/community/${this.props.id}`}>
+          <Item.Header as="a" href={linkURL}>
             {community.name}
           </Item.Header>
           <Item.Meta>

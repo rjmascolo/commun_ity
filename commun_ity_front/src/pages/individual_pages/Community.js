@@ -28,7 +28,8 @@ class Community extends React.Component{
     const isManager = this.props.user.managingCommunities ? this.props.user.managingCommunities.map(community => community.id).includes(parseInt(this.props.id)) : null
 
     return(
-        <div id="community-div">
+        <div id="individual-page">
+          <div id="header">
           <Image src={this.state.community.image_url} size='medium' circular id="event-image" />
           <Header as='h2' icon textAlign='center'>
             <Header.Content>
@@ -38,12 +39,19 @@ class Community extends React.Component{
               {this.state.community.description}
             </Header.Subheader>
           </Header>
-          <List>
+        </div>
+        <div id="body">
+          <List id="members-list">
+            <h2>Current Members</h2>
             {communityManagers}
             {communityMembers}
           </List>
-          <EventsContainer events={this.state.community.events} />
+          <div>
+            <h3 id="event-header" >Upcoming Events</h3>
+            <EventsContainer events={this.state.community.events} />
+          </div>
           {isManager ? <EventForm createEvent={this.props.createEvent} community_id={this.state.community.id} addEvent={this.addEvent}/> : null }
+        </div>
       </div>
     )
   }

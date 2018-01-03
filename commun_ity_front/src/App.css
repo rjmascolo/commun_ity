@@ -5,15 +5,51 @@
 }
 
 #user-home-div{
-  margin-top: 3%;
+  margin: 3% 4% 0 0;
   float:right;
-  width: 80%;
+  width: 75%;
   text-align: center;
 }
 
 #login-form {
   margin: auto;
   width: 50%;
+}
+
+#members-list h2{
+  font-size: 1.4em;
+  background: #C7C9C3;
+  overflow: hidden;
+  margin: 0;
+  text-align: center;
+}
+
+#members-list {
+  float:right;
+  width: 20%;
+  height: 30%;
+  border-radius: 4%;
+  border: 1px solid black;
+  text-overflow: clip;
+}
+
+#individual-page {
+  float:right;
+  width: 80%;
+}
+
+#header {
+  background: #9DA9A0;
+  padding-top: 3em;
+  padding-bottom:1em;
+}
+
+#event-header {
+  text-align: center;
+}
+
+#body {
+  padding: 1em 1em 1em 1em;
 }
 
 @keyframes App-logo-spin {
@@ -24,7 +60,11 @@
 #sidebar {
   width:20%;
   float:left;
-  margin-top: 3%;
+  position:relative;
+  padding-top: 3%;
+  padding-bottom: 100%;
+  padding-left: 1%;
+  background: #3D5A80;
 }
 
 #calendar-div-container {
@@ -44,4 +84,8 @@
 
 #event-image {
   margin: 2em auto;
+}
+
+#task-table-width {
+  width:78%;
 }

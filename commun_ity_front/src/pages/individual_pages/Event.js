@@ -23,12 +23,21 @@ class Event extends React.Component{
       return {event: event}
     })
   }
+  onlyUnique(data) {
+    let prevIds = []
+    let newArray = []
+    for (let i = 0; i < data.length; i++) {
+      prevIds.includes(data[i].id) ? null : newArray.push(data[i]) ; prevIds.push(data[i].id)
+    }
+    return newArray
+  }
 
   render(){
     const isManager = this.state.event.community ? this.props.user.managingCommunities.map(community => community.id).includes(parseInt(this.state.event.community.id)) : null
 
     const eventParticipants = this.state.event.tasks ? (this.state.event.tasks.filter(task => task.user).map ((task, i ) =>  <MemberCard member={task.user} isManager={false} key={i} /> )) : null
     // const communityManagers = this.state.event.tasks ? (this.state.community.managers.map ((member, i ) => <MemberCard member={member} isManager={true} key={i} /> )) : null
+    // const thing = this.state.event.tasks ? this.onlyUnique(this.state.event.tasks.filter(task => task.user)).map(task => task.user):null
 
     return(
         <div id="individual-page">

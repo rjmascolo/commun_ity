@@ -17,6 +17,9 @@ export default class SidebarLeft extends Component {
     return (
       <Menu vertical idname="sidebar">
         <Menu.Item>
+          <h1 id="logo-font">Commun_ity</h1>
+        </Menu.Item>
+        <Menu.Item>
           <Menu.Header>Your Dashboard</Menu.Header>
 
           <Menu.Menu>

@@ -7,7 +7,7 @@ const TasksTable = ({
   tasks,
   tableType,
   toggleCompletedTask,
-  volunteer
+  volunteer, user
 }) => {
   const taskDataDash =
     tableType === "dashboard" && tasks
@@ -37,6 +37,7 @@ const TasksTable = ({
               description={taskDets.description}
               taskId={taskDets.id}
               user={taskDets.user}
+              userId={user.id}
               date={taskDets.date_presentable}
               volunteer={volunteer}
               taskIsTaken={taskDets.user ? true : false}
@@ -45,7 +46,7 @@ const TasksTable = ({
           );
         })
       : null;
-
+      console.log(user)
   return (
     <Table celled padded>
       <Table.Header>

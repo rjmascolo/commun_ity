@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Item } from "semantic-ui-react";
+import { Item } from "semantic-ui-react";
 import EventsBrowseItem  from "../container_cards/EventBrowseItem";
 
 const EventsContainer = ({ events }) => {

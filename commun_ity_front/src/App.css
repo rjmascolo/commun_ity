@@ -59,3 +59,13 @@
   width: 80%;
   float: right;
 }
+
+#logo-font{
+  font-family: 'Permanent Marker', cursive;
+}
+
+#browse-header {
+  padding-bottom: .8em;
+  border-bottom: 1px solid rgba(34,36,38,.15);
+  margin-bottom: 1em
+}

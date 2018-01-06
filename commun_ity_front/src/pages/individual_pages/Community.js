@@ -1,8 +1,7 @@
 import React from 'react'
 
 import MemberCard from '../../container_cards/memberCard'
-import TasksTable from '../../containers/TasksTable'
-import { Header, Image, List, Button, Modal } from 'semantic-ui-react'
+import { Image, List, Button, Modal } from 'semantic-ui-react'
 import EventsContainer from '../../containers/EventsContainer'
 import EventForm from '../../forms/EventForm'
 import '../../css/member-container.css'

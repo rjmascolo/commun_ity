@@ -6,6 +6,11 @@ class TaskTableRows extends React.Component {
     this.props.toggleCompletedTask(this.props.id, data.checked);
   };
 
+  handleClick = ( ) => {
+    this.props.volunteer(this.props.userId, this.props.taskId)
+
+  }
+
   volunteerCell = () => {
     if (this.props.taskIsTaken && this.props.tableType !== "dashboard") {
       return (
@@ -21,7 +26,7 @@ class TaskTableRows extends React.Component {
         <Table.Cell>
           <Button
             onClick={() =>
-              this.props.volunteer(this.props.userId, this.props.taskId)
+              this.handleClick(this.props.userId, this.props.taskId)
             }
           >
             Volunteer
@@ -32,7 +37,7 @@ class TaskTableRows extends React.Component {
   };
 
   render() {
-    console.log(this.props.event? new Date(this.props.event.start_date): null )
+    console.log(this.props)
     return (
       <Table.Row>
         <Table.Cell>

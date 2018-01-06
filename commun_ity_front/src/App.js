@@ -4,7 +4,7 @@ import "./App.css";
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 // pages
 import SidebarLeft from "./Sidebar";
-import CalendarPage from "./pages/dashboard/CalendarPage";
+// import CalendarPage from "./pages/dashboard/CalendarPage";
 import LogIn from "./pages/LogIn";
 import EventsPage from "./pages/dashboard/EventsPage";
 import TasksPage from "./pages/dashboard/TasksPage";
@@ -181,15 +181,17 @@ class App extends Component {
       },
       body: JSON.stringify({ task: { user_id: userId } })
     };
-    fetch(url, object).then(res => res.json());
-    // let newArray = [...this.state.user.tasks]
-    // newArray.find(item => item.id === taskId).completed = value
-    // this.setState({user:{tasks: newArray}})
+    fetch(url, object).then(res => res.json())
+    .then(task => this.setState(prevState => {
+      let newTask = [...prevState.user.tasks, task];
+      debugger;
+      return { user: { ...prevState.user, task: newTask } };
+      })
+    );
   };
 
   render() {
     const token = localStorage.getItem("token");
-    console.log(token)
     return (
       <div className="App">
         <Router>

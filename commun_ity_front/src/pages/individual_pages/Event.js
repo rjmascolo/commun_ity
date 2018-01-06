@@ -6,7 +6,7 @@ import MemberCard from '../../container_cards/memberCard'
 import '../../css/member-container.css'
 import '../../css/individual-page-headers.css'
 
-import { Header, Image, List, Button } from 'semantic-ui-react'
+import { Image, List, Button, Modal } from 'semantic-ui-react'
 
 
 class Event extends React.Component{
@@ -18,7 +18,6 @@ class Event extends React.Component{
   }
 
   addTask = (newTask) => {
-    const eventTasks = this.state.event.task
     this.setState(prevState => {
       let event = prevState.event
       event.tasks.push(newTask)
@@ -57,7 +56,12 @@ class Event extends React.Component{
                 <p>{this.state.event.location}</p>
                 <b><p>Description</p></b>
                 <p>{this.state.event.description}</p>
-                <Button content='Join Us' primary />
+                {isManager ? (<Modal trigger={<Button>Create An Task</Button>}>
+                <Modal.Header>Create An Task</Modal.Header>
+                <Modal.Content image>
+                  <TaskForm createTask={this.props.createTask} event_id={this.state.event.id} addTask= {this.addTask} />
+                </Modal.Content>
+                </Modal>) : <Button content='Join Us' primary />}
               </div>
             </div>
           </div>
@@ -74,7 +78,6 @@ class Event extends React.Component{
           <div id="task-table-width">
             <h3 id="event-header" >Tasks Needed</h3>
             <TasksTable tasks={this.state.event.tasks} volunteer={this.props.volunteer} user={this.props.user} getTaskUser={this.getTaskUser}/>
-            {isManager ? <TaskForm createTask={this.props.createTask} event_id={this.state.event.id} addTask= {this.addTask} /> : null }
           </div>
         </div>
       </div>

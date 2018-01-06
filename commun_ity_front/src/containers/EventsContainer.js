@@ -1,32 +1,28 @@
 import React from "react";
-import { Grid } from "semantic-ui-react";
-import EventCard from "../container_cards/EventCard";
+import { Grid, Item } from "semantic-ui-react";
+import EventsBrowseItem  from "../container_cards/EventBrowseItem";
 
 const EventsContainer = ({ events }) => {
   const eventData = events ? (
     events.map((event, i) => {
       return (
-        <Grid.Column key={i}>
-          <EventCard
-            name={event.name}
-            date={event.date}
-            image={event.image}
-            peopleGoing={event.volunteer_num}
-            id={event.id}
+          <EventsBrowseItem
+            event={event}
+            // name={event.name}
+            // date={event.date}
+            // image={event.image}
+            // peopleGoing={event.volunteer_num}
+            // id={event.id}
           />
-        </Grid.Column>
       );
     })
   ) : (
     <div>Loading</div>
   );
   return (
-    <div>
-      <br />
-      <Grid stackable columns={5}>
-        {eventData}
-      </Grid>
-    </div>
+    <Item.Group divided>
+      {eventData}
+    </Item.Group>
   );
 };
 

@@ -12,40 +12,14 @@
 }
 
 #login-form {
-  margin: auto;
+  float: left;
+  margin-left: 2em;
   width: 50%;
-}
-
-#members-list h2{
-  font-size: 1.4em;
-  background: #C7C9C3;
-  overflow: hidden;
-  margin: 0;
-  text-align: center;
-}
-
-#members-list {
-  float:right;
-  width: 20%;
-  height: 30%;
-  border-radius: 4%;
-  border: 1px solid black;
-  text-overflow: clip;
 }
 
 #individual-page {
   float:right;
   width: 80%;
-}
-
-#header {
-  background: #9DA9A0;
-  padding-top: 3em;
-  padding-bottom:1em;
-}
-
-#event-header {
-  text-align: center;
 }
 
 #body {
@@ -77,15 +51,11 @@
   text-align:left;
 }
 
+#task-table-width {
+  width:78%;
+}
+
 #event-div {
   width: 80%;
   float: right;
-}
-
-#event-image {
-  margin: 2em auto;
-}
-
-#task-table-width {
-  width:78%;
 }

@@ -1,0 +1,32 @@
+#header {
+  background: #9DA9A0;
+  padding-top: .9em;
+  padding-bottom:1em;
+}
+
+#header-content {
+  background: white;
+  margin: 2em;
+  border-radius: 15px 15px 15px 15px;
+}
+
+#title-description {
+  display:inline-block;
+  vertical-align: top;
+  padding: 1em 0 0 1em;
+  width: 50%;
+}
+
+
+#event-div {
+  width: 80%;
+  float: right;
+}
+#events-container {
+  width:70%
+}
+
+#event-image {
+  margin: 1em 1em 1em 1em;
+  display: inline-block;
+}

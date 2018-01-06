@@ -12,12 +12,12 @@ const TasksTable = ({
   const taskDataDash =
     tableType === "dashboard" && tasks
       ? tasks.filter(task => task.description !== "RSVP").map((taskDets, i) => {
-          console.log(taskDets);
           return (
             <TaskTableRows
               url={`/events/${taskDets.event.id}`}
               key={i}
               id={taskDets.id}
+              date={taskDets.date_presentable}
               description={taskDets.description}
               event={taskDets.event}
               tableType="dashboard"
@@ -30,7 +30,6 @@ const TasksTable = ({
   const taskDataPage =
     tableType !== "dashboard" && tasks
       ? tasks.filter(task => task.description !== "RSVP").map((taskDets, i) => {
-          console.log(taskDets.completed);
           return (
             <TaskTableRows
               key={i}
@@ -38,6 +37,7 @@ const TasksTable = ({
               description={taskDets.description}
               taskId={taskDets.id}
               user={taskDets.user}
+              date={taskDets.date_presentable}
               volunteer={volunteer}
               taskIsTaken={taskDets.user ? true : false}
               tableType="event-page"

@@ -189,6 +189,7 @@ class App extends Component {
 
   render() {
     const token = localStorage.getItem("token");
+    console.log(token)
     return (
       <div className="App">
         <Router>
@@ -219,7 +220,7 @@ class App extends Component {
               )}
             />
             {/* Dashboard routes */}
-            <Route
+            {/* <Route
               exact
               path="/your-calendar"
               render={() => {
@@ -233,7 +234,7 @@ class App extends Component {
                   <Redirect to="/login" />
                 );
               }}
-            />
+            /> */}
             <Route
               exact
               path="/your-events"

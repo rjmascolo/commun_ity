@@ -20,12 +20,12 @@ export default class SidebarLeft extends Component {
           <Menu.Header>Your Dashboard</Menu.Header>
 
           <Menu.Menu>
-            <Menu.Item
+            {/* <Menu.Item
               name="Calendar"
               href="/your-calendar"
               active={activeItem === "Calendar"}
               onClick={this.handleItemClick}
-            />
+            /> */}
             <Menu.Item
               name="Events"
               href="/your-events"

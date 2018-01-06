@@ -32,6 +32,7 @@ class TaskTableRows extends React.Component {
   };
 
   render() {
+    console.log(this.props.event? new Date(this.props.event.start_date): null )
     return (
       <Table.Row>
         <Table.Cell>
@@ -43,7 +44,7 @@ class TaskTableRows extends React.Component {
         {this.props.tableType === "dashboard" ? (
           <Table.Cell textAlign="center">
             {" "}
-            {this.props.event.start_date}{" "}
+            {this.props.date}{" "}
           </Table.Cell>
         ) : null}
         {this.volunteerCell()}

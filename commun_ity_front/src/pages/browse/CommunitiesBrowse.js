@@ -61,7 +61,7 @@ class CommunitiesBrowse extends React.Component{
       { menuItem: 'Search Communities', render: () => <Tab.Pane><div id="browse-event-card-container"><Item.Group divided>{communitiesDets}</Item.Group></div></Tab.Pane> },
       { menuItem: 'Communities You Manage', render: () => <Tab.Pane><div id="browse-event-card-container"><Item.Group divided>{managedCommunitiesDets}</Item.Group></div></Tab.Pane> },
     ]
-
+    console.log(this.props.user)
     return(
     <div id="user-home-div">
       <h1 id="user-home-welcome">Communities Around You</h1>

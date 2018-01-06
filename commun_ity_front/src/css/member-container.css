@@ -1,0 +1,23 @@
+#members-list {
+  float:right;
+  width: 20%;
+  height: 30%;
+  text-overflow: clip;
+}
+
+#members-list h2{
+  font-size: 1.4em;
+  overflow: hidden;
+  margin: 0;
+  text-align: center;
+}
+#member-list-body {
+  border-radius: 0 0 4% 4%;
+  border: 1px solid #C7C9C3;
+  margin-top: 0;
+}
+#member-list-top {
+  border-radius: 4% 4% 0 0 ;
+  margin-top: 0;
+  background: #C7C9C3;
+}

@@ -2,7 +2,6 @@ import React from "react";
 import EventsContainer from "../../containers/EventsContainer";
 
 class EventsPage extends React.Component {
-
   render() {
     return (
       <div id="user-home-div">

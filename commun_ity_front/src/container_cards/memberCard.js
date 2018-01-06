@@ -1,7 +1,7 @@
-import React from 'react'
-import { List } from 'semantic-ui-react'
+import React from "react";
+import { List } from "semantic-ui-react";
 
-const MemberCard = ({member, isManager}) => {
+const MemberCard = ({ member, isManager }) => {
   return (
     <List.Item>
       <List.Content>
@@ -9,7 +9,7 @@ const MemberCard = ({member, isManager}) => {
         <List.Description>{isManager ? "Manager" : "Member"}</List.Description>
       </List.Content>
     </List.Item>
-  )
-}
+  );
+};
 
-export default MemberCard
+export default MemberCard;

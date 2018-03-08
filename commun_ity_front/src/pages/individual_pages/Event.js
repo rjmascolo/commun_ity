@@ -48,7 +48,7 @@ class Event extends React.Component{
         <div id="individual-page">
           <div id="header">
             <div id="header-content">
-              <Image src={this.state.event.image} size='large' rounded id="event-image" />
+              <Image src={this.state.event.image} size='medium' rounded id="event-image" />
               <div id="title-description">
                 <h2 id="header-title">{this.state.event.name}</h2>
                 <p>with <a href={"/community/" + communityId}>{communityName}</a></p>

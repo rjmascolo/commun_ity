@@ -8,6 +8,7 @@ const EventsContainer = ({ events }) => {
       return (
           <EventsBrowseItem
             event={event}
+            isGoing={true}
             // name={event.name}
             // date={event.date}
             // image={event.image}

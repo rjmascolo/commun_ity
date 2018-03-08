@@ -28,13 +28,11 @@ class Community extends React.Component{
     const communityManagers = this.state.community.managers ? (this.state.community.managers.map ((member, i ) => <MemberCard member={member} isManager={true} key={i} /> )) : null
     const isManager = this.props.user.managingCommunities ? this.props.user.managingCommunities.map(community => community.id).includes(parseInt(this.props.id)) : null
 
-    console.log(this.state.community)
-
     return(
         <div id="individual-page">
           <div id="header">
           <div id="header-content">
-            <Image src={this.state.community.image_url} size='large' rounded id="event-image" />
+            <Image src={this.state.community.image_url} size='medium' rounded id="event-image" />
             <div id="title-description">
               <h2 id="header-title">{this.state.community.name}</h2>
               <b><p>Location</p></b>

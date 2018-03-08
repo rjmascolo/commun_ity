@@ -15,7 +15,6 @@ class CommunityBrowseCard extends React.Component {
     const community = this.props.community;
     const members = community.members.length;
     const linkURL = `/community/${community.id}`;
-    console.log(community);
     return (
       <Item>
         <Item.Image src={community.image_url} />
